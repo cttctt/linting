@@ -135,7 +135,7 @@
             <class name="com.summersoft.ctt.yycx.test.TestAll">
             <methods>
             <include name="clickMenu"></include>
-            <exclude name="exportAll"></exclude>
+            <!--<exclude name="exportAll"></exclude>-->
             </methods>
             </class>
 

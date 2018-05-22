@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="chromeTest"
+           tests="5"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="335.804">
+  <properties />
+  
+  
+            <testcase name="driverMessage" time="65.552" classname="com.summersoft.ctt.yycx.test.OperationManage" />
+                <testcase name="regionalManager" time="36.773" classname="com.summersoft.ctt.yycx.test.OperationManage" />
+                <testcase name="vehicleManager" time="64.895" classname="com.summersoft.ctt.yycx.test.OperationManage" />
+                <testcase name="businessManager" time="34.083" classname="com.summersoft.ctt.yycx.test.OperationManage" />
+                <testcase name="driverManage" time="134.501" classname="com.summersoft.ctt.yycx.test.OperationManage" />
+      
+</testsuite>

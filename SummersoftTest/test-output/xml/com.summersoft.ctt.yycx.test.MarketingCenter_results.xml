@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="chromeTest"
+           tests="4"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="271.108">
+  <properties />
+  
+  
+            <testcase name="couponTab" time="7.378" classname="com.summersoft.ctt.yycx.test.MarketingCenter" />
+                <testcase name="couponTemplateAdd" time="26.425" classname="com.summersoft.ctt.yycx.test.MarketingCenter" />
+                <testcase name="passengerRecharge" time="8.757" classname="com.summersoft.ctt.yycx.test.MarketingCenter" />
+                <testcase name="activity" time="228.548" classname="com.summersoft.ctt.yycx.test.MarketingCenter" />
+      
+</testsuite>

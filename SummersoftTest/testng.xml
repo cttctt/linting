@@ -3,8 +3,8 @@
 <suite name="All Test Suite">
     <parameter name="username" value="chentt"/>
     <parameter name="password" value="Ctt5477."/>
-    <parameter name="agent" value="兰陨代理5"/>
-    <parameter name="shortName" value="蓝韵企业5"/>
+    <parameter name="agent" value="兰测代理"/>
+    <parameter name="shortName" value="兰测企业"/>
     <parameter name="city" value="厦门市"/>
     <parameter name="carType" value="专车"/>
     <listeners>

@@ -3,10 +3,10 @@
 <suite name="All Test Suite">
     <parameter name="username" value="chentt"/>
     <parameter name="password" value="Ctt5477."/>
-    <parameter name="agent" value="兰陨代理5"/>
-    <parameter name="shortName" value="蓝韵企业5"/>
+    <parameter name="agent" value="兰陨代理12"/>
+    <parameter name="shortName" value="蓝韵企业12"/>
     <parameter name="city" value="厦门市"/>
-    <parameter name="carType" value="专车"/>
+    <parameter name="carType" value="出租车"/>
     <listeners>
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
@@ -26,38 +26,35 @@
             <!--<class name="com.summersoft.ctt.yycx.test.SystemSetting">-->
             <!--<parameter name="province" value="福建省" />-->
             <!--<methods>-->
-            <!--&lt;!&ndash;<include name="chuzucheSystemSet"></include>&ndash;&gt;-->
+            <!--<include name="chuzucheSystemSet"></include>-->
             <!--<include name="scopeOfBusiness"></include>-->
             <!--<include name="kuaicheSystemSet"></include>-->
             <!--<include name="zhuancheSystemSet"></include>-->
             <!--</methods>-->
             <!--</class>-->
 
-            <!--<class name="com.summersoft.ctt.yycx.test.OperationManage">-->
-            <!--<parameter name="responsibleIdCard" value="350521199002076026" />-->
-            <!--<parameter name="phone" value="15969181192" />-->
-            <!--<methods>-->
-            <!--&lt;!&ndash;<include name="addPlatformInfo"></include>&ndash;&gt;-->
-            <!--<include name="regionalManager"></include>-->
-            <!--<include name="businessManager"></include>-->
-            <!--<include name="vehicleManager"></include>-->
-            <!--<include name="driverManage"></include>-->
-            <!--<include name="driverMessage"></include>-->
-            <!--</methods>-->
-            <!--</class>-->
-
-
-
-
-            <class name="com.summersoft.ctt.yycx.po.OperationManagerPo">
-           <methods>
+            <class name="com.summersoft.ctt.yycx.test.OperationManage">
+            <parameter name="responsibleIdCard" value="350521199002076026" />
+            <parameter name="phone" value="15969181192" />
+            <methods>
             <include name="addPlatformInfo"></include>
-           <include name="regionalManager"></include>
+            <include name="regionalManager"></include>
             <include name="businessManager"></include>
             <include name="vehicleManager"></include>
-           <include name="driverManager"></include>
+            <include name="driverManage"></include>
+            <include name="driverMessage"></include>
             </methods>
-           </class>
+            </class>
+
+            <!--<class name="com.summersoft.ctt.yycx.po.OperationManagerPo">-->
+           <!--<methods>-->
+            <!--<include name="addPlatformInfo"></include>-->
+           <!--<include name="regionalManager"></include>-->
+            <!--<include name="businessManager"></include>-->
+            <!--<include name="vehicleManager"></include>-->
+           <!--<include name="driverManager"></include>-->
+            <!--</methods>-->
+           <!--</class>-->
 
 
             <!--<class name="com.summersoft.ctt.yycx.test.MarketingCenter">-->
@@ -132,12 +129,12 @@
 
 
 
-            <class name="com.summersoft.ctt.yycx.test.TestAll">
-            <methods>
-            <include name="clickMenu"></include>
+            <!--<class name="com.summersoft.ctt.yycx.test.TestAll">-->
+            <!--<methods>-->
+            <!--<include name="clickMenu"></include>-->
             <!--<exclude name="exportAll"></exclude>-->
-            </methods>
-            </class>
+            <!--</methods>-->
+            <!--</class>-->
 
         </classes>
     </test>

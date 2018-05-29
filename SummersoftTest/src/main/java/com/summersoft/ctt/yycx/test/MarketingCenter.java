@@ -261,31 +261,38 @@ public class MarketingCenter {
 	public void passengerRecharge(String freeMoney) throws InterruptedException {
 		Thread.sleep(2000);
 		Logger.Output(LogType.LogTypeName.INFO, "准备执行乘客充值编辑及检测该页面是否有默认的6个优惠策略");
-		d.findElementClick("link", "乘客充值管理");
-		Thread.sleep(2000);
-		// 判断乘客充值管理下是否6个充值策略都显示
-		List<WebElement> list = driver.findElements(By.cssSelector("#containerDiv>div"));
-		if (list.size() == 6) {
-			Logger.Output(LogType.LogTypeName.INFO, "乘客充值管理下的6个充值策略都能显示");
-		} else {
-			Logger.Output(LogType.LogTypeName.ERROR, "乘客充值管理下的6个充值策略并未检测到");
-		}
-		d.setTimeOut();
-		d.findElementClick("xpath","//*[@id=\"showDivBtnrecharge11111\"]/a/span");
-		d.findElementClear("id","editGiftValuerecharge11111");
-		d.findElementSendKeys("id","editGiftValuerecharge11111", freeMoney);
-		d.findElementClick("xpath","//*[@id=\"editDivBtnrecharge11111\"]/a/span");
-		Thread.sleep(3000);
-		String show=d.findElement("id","showGiftValuerecharge11111").getText();
-		String edit="赠送"+freeMoney+"元";
-		if(edit.equals(show))
+		if(d.findElement("link","乘客充值管理").isDisplayed())
 		{
-			Logger.Output(LogType.LogTypeName.INFO, "乘客充值编辑成功");
+			Logger.Output(LogType.LogTypeName.INFO, "乘客充值菜单项未显示");
 		}
-		else
-		{
-			Logger.Output(LogType.LogTypeName.ERROR, "乘客充值编辑失败");
+		else{
+			d.findElementClick("link", "乘客充值管理");
+			Thread.sleep(2000);
+			// 判断乘客充值管理下是否6个充值策略都显示
+			List<WebElement> list = driver.findElements(By.cssSelector("#containerDiv>div"));
+			if (list.size() == 6) {
+				Logger.Output(LogType.LogTypeName.INFO, "乘客充值管理下的6个充值策略都能显示");
+			} else {
+				Logger.Output(LogType.LogTypeName.ERROR, "乘客充值管理下的6个充值策略并未检测到");
+			}
+			d.setTimeOut();
+			d.findElementClick("xpath","//*[@id=\"showDivBtnrecharge11111\"]/a/span");
+			d.findElementClear("id","editGiftValuerecharge11111");
+			d.findElementSendKeys("id","editGiftValuerecharge11111", freeMoney);
+			d.findElementClick("xpath","//*[@id=\"editDivBtnrecharge11111\"]/a/span");
+			Thread.sleep(3000);
+			String show=d.findElement("id","showGiftValuerecharge11111").getText();
+			String edit="赠送"+freeMoney+"元";
+			if(edit.equals(show))
+			{
+				Logger.Output(LogType.LogTypeName.INFO, "乘客充值编辑成功");
+			}
+			else
+			{
+				Logger.Output(LogType.LogTypeName.ERROR, "乘客充值编辑失败");
+			}
 		}
+
 	}
 
 	@BeforeMethod

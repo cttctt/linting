@@ -112,8 +112,8 @@ public class SystemSetting {
 		d.findElementClick("css", ".btn-determine");
 		String message = d.findElement("class", "toast-message").getText();
 		Logger.Output(LogType.LogTypeName.INFO, message);
-		if (message.contains("该组织机构的这项业务已经存在")) {
-			d.setTimeOut();
+		if (message.contains("该组织机构的这项业务已经存在")||message.contains("已经开通")) {
+            Thread.sleep(3000);
 			d.findElementClick("class", "close");
 			Thread.sleep(3000);
 		}
@@ -130,8 +130,8 @@ public class SystemSetting {
 		d.findElementClick("css", ".btn-determine");
 		Logger.Output(LogType.LogTypeName.INFO, d.findElement("class", "toast-message").getText());
 		String rr = d.findElement("class", "toast-message").getText();
-		String mm = "快车业务下的" + city + "城市已经开通了";
-		if (rr.equals(mm)) {
+        String mm="已经开通";
+		if (rr.contains(mm)) {
 			d.setTimeOut();
 			d.findElementClick("class", "close");
 			Thread.sleep(3000);

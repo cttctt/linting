@@ -176,17 +176,15 @@ public class OperationManage {
         } else {
             Logger.Output(LogType.LogTypeName.ERROR, "经营许可信息保存失败");
         }
-
     }
-
 
     @Test
     @Parameters({"agent", "responsibleIdCard", "carType", "city"})
     public void regionalManager(String agent, String responsibleIdCard, String carType, String city)
             throws InterruptedException {
         Thread.sleep(3000);
-//        d.findElementClick("link", "营运管理中心");
-//        Thread.sleep(3000);
+        d.findElementClick("link", "营运管理中心");
+        Thread.sleep(3000);
         d.findElementClick("link", "区域代理管理");
         Thread.sleep(3000);
         d.findElementClick("id", "agent-add");
@@ -903,6 +901,7 @@ public class OperationManage {
                         .getText().contains(name);
                 if (detail) {
                     Logger.Output(LogType.LogTypeName.INFO, "司机信息查看成功");
+                    Thread.sleep(3000);
                     // 封号操作
                     d.findElementClick("link", "营运管理中心");
                     Thread.sleep(3000);

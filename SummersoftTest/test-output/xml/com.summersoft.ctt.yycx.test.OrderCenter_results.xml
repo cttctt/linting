@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="chromeTest"
+           tests="4"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="53.601">
+  <properties />
+  
+  
+            <testcase name="passengerComplaint" time="13.783" classname="com.summersoft.ctt.yycx.test.OrderCenter" />
+                <testcase name="driverComplaint" time="10.244" classname="com.summersoft.ctt.yycx.test.OrderCenter" />
+                <testcase name="warningMessage" time="9.684" classname="com.summersoft.ctt.yycx.test.OrderCenter" />
+                <testcase name="orderSearch" time="19.890" classname="com.summersoft.ctt.yycx.test.OrderCenter" />
+      
+</testsuite>

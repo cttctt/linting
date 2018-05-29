@@ -250,50 +250,6 @@
               <item name="SummersoftTest" type="b2602c69:ProjectViewProjectNode" />
               <item name="SummersoftTest" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="SummersoftTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SummersoftTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SummersoftTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SummersoftTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SummersoftTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SummersoftTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SummersoftTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SummersoftTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="yycx" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SummersoftTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SummersoftTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="yycx" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SummersoftTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SummersoftTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="yycx" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -485,7 +441,7 @@
       <workItem from="1526889841732" duration="34000" />
       <workItem from="1526978748293" duration="1482000" />
       <workItem from="1527039348948" duration="689000" />
-      <workItem from="1527128039375" duration="12188000" />
+      <workItem from="1527128039375" duration="12822000" />
     </task>
     <servers />
   </component>
@@ -522,7 +478,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197174000" />
+    <option name="totallyTimeSpent" value="197808000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">

@@ -80,7 +80,7 @@ public class VehicleManager {
     }
 
 
-    //选择级别类型
+//选择级别类型
     @FindBy(id="carLevelUuid")
     private  WebElement carLevelUuid;
     public   void selectCarLevelUuid(String str)
@@ -88,6 +88,15 @@ public class VehicleManager {
         Select sel=new Select(carLevelUuid);
         sel.selectByVisibleText(str);
     }
+    //选择级别类型
+    @FindBy(name="carLevelUuid")
+    private  WebElement carUuid;
+    public   void selectCarLevelUuidByName(String str)
+    {
+        Select sel=new Select(carUuid);
+        sel.selectByVisibleText(str);
+    }
+
 
     //输入所属人
     @FindBy( name="ownerName")

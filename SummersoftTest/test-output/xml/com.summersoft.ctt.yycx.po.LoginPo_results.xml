@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="13.479">
+           time="12.237">
   <properties />
   
   
-            <testcase name="userLogin" time="13.479" classname="com.summersoft.ctt.yycx.po.LoginPo" />
+            <testcase name="userLogin" time="12.237" classname="com.summersoft.ctt.yycx.po.LoginPo" />
       
 </testsuite>

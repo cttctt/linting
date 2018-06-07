@@ -119,8 +119,6 @@ public class InformationPublicCenter {
 	@Test
 
 	public void articleAdd() throws InterruptedException {
-
-
 		Thread.sleep(3000);
 		d.findElementClick("link", "文章管理");
 		Thread.sleep(3000);

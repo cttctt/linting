@@ -35,7 +35,7 @@ public class MyWebdriver {
     public static String ProjectURL = System.getProperty("user.dir") + "\\src\\main\\resources";
     public static String RANDOM = String.valueOf(new Date().getTime());
     //开通项目的类型（约约：区域类型开通三个出租车|专车|快车，易行通：出租车,其他：专车和快车）
-    public static String ProjectType = "易行通";
+    public static String ProjectType = "约约";
 //    //旧版时的业务类型
 //   public static String bussinessType="出租车";
     //开通区域代理城市

@@ -589,14 +589,14 @@ public class OperationManagerPo {
 //        选择保险有效期止
         vehicle.selectInsurExp(ExcelUtil.getCellAsDate(39, 4));
 //        选择车辆燃料类型
-        vehicle.selectFuelType(ExcelUtil.getCellAsString(40, 4));
+     vehicle.selectFuelType(ExcelUtil.getCellAsString(40, 4));
 
 //        发动机排量
         vehicle.inputEngineDisplace(ExcelUtil.getCellAsString(41, 4));
 //        发动机功率
         vehicle.inputEnginePower(ExcelUtil.getCellAsString(42, 4));
 //        车辆轴距
-        vehicle.inputWheelbase(ExcelUtil.getCellAsString(43, 4));
+       vehicle.inputWheelbase(ExcelUtil.getCellAsString(43, 4));
         //车辆行驶里程
       vehicle.inputVehicleKilometers(ExcelUtil.getCellAsNumber(56,4));
 //        选择车辆检修状态
@@ -705,6 +705,7 @@ public class OperationManagerPo {
             Thread.sleep(3000);
             vehicle.clickSubmitBtn();
             Thread.sleep(3000);
+
             d.findElementClick("link", "快车");
             Thread.sleep(3000);
             d.findElementSendKeys("xpath", "//*[@id=\"express\"]/form/div[3]/div/input", fastPlateNum);
@@ -797,6 +798,42 @@ public class OperationManagerPo {
         }
 
     }
+//    @Test
+//    public void chendd() throws InterruptedException {
+//        d.findElementClick("xpath","营运管理中心");
+//        Thread.sleep(3000);
+//        d.findElementClick("xpath","车辆管理");
+//        Thread.sleep(3000);
+//        d.findElementClick("xpath","出租车");
+//        Thread.sleep(3000);
+//        d.findElementClick("xpath","//*[@id=\"taxi_table\"]/tbody/tr/td[6]/a[2]");
+//        Thread.sleep(3000);
+//        d.findElementClick("xpath","//*[@id=\"setMore\"]/div/li/i");
+//        //查看所有的input是否都有值
+//        List<WebElement> list= driver.findElements(By.cssSelector("input[type='text']"));
+//        for(int i=0;i<list.size();i++) {
+//            if ( list.get(i).getAttribute("value").isEmpty()) {
+//                if(list.get(i).getAttribute("name").contains("File"))
+//                {
+//                    continue;
+//                }
+//                else{
+//                    Logger.Output(LogType.LogTypeName.ERROR,list.get(i).getAttribute("name") + "项数据丢失");
+//                }
+//            }
+//        }
+//        //查看所有下拉列表是否都有值
+//        List<WebElement> li= driver.findElements(By.cssSelector("option"));
+//        for(int j=0;j<li.size();j++)
+//        {
+//            if(li.get(j).isSelected()&&li.get(j).getText().contains("请选择"))
+//            {
+//                Logger.Output(LogType.LogTypeName.ERROR,li.get(j).getText() + "项数据丢失");
+//            }
+//        }
+//    }
+
+
     //检验车辆信息是否都有值
     public void test(String carTypeName)throws Exception
     {
@@ -825,10 +862,8 @@ public class OperationManagerPo {
         Thread.sleep(3000);
         d.findElementClick("xpath","//*[@id=\"setMore\"]/div/li/i");
         //查看所有的input是否都有值
-        List<WebElement> list= driver.findElements(By.cssSelector("input"));
-        System.out.println(list.get(0).getAttribute("value"));
+        List<WebElement> list= driver.findElements(By.cssSelector("input[type='text']"));
         for(int i=0;i<list.size();i++) {
-
             if ( list.get(i).getAttribute("value").isEmpty()) {
                 if(list.get(i).getAttribute("name").contains("File"))
                 {
@@ -1151,12 +1186,15 @@ public class OperationManagerPo {
             case "约约":
                 d.findElementClick("link", "出租车");
                 addVehicle("出租车");
+//                test("出租车");
                 Thread.sleep(3000);
                 d.findElementClick("link", "快车");
                 addVehicle("快车");
+//                test("快车");
                 Thread.sleep(3000);
                 d.findElementClick("link", "专车");
                 addVehicle("专车");
+//                test("专车");
                 break;
             case "易行通":
                 d.findElementClick("link", "出租车");
@@ -1178,7 +1216,7 @@ public class OperationManagerPo {
     @BeforeMethod
     public void beforeMethod() throws InterruptedException {
         Thread.sleep(3000);
-        d.findElementClick("link", "营运管理中心");
+     d.findElementClick("link", "营运管理中心");
         Logger.Output(LogType.LogTypeName.INFO, "===============================================");
 
     }

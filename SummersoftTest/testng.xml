@@ -46,6 +46,7 @@
 
             <class name="com.summersoft.ctt.yycx.po.OperationManagerPo">
            <methods>
+
             <!--<include name="addPlatformInfo"></include>-->
            <include name="regionalManager"></include>
             <include name="businessManager"></include>

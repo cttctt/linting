@@ -46,37 +46,34 @@ public class MarketingCenter {
 	public  static String name=RandomValue.getChineseName();
 	public static String putInDateOn="2017-01-01";
 	public static String putInDateOff="2019-01-01";
-
-
+	public static String city=MyWebdriver.city;
 	@Test
-	@Parameters({"city"})
-	public  void activity(String city) throws InterruptedException
+	public  void activity() throws InterruptedException
 
 	{
 		Thread.sleep(3000);
 		d.findElementClick("link", "营销控制中心");
 		Thread.sleep(3000);
 		d.findElementClick("link","APP活动管理");
-		activityAdd(city,"出租车弹屏");
+		activityAdd("出租车弹屏");
 		Thread.sleep(3000);
 		//出租车顶部通知
-		topAdd(city);
+		topAdd();
 		Thread.sleep(3000);
 		d.findElementClick("link","左侧边栏底部");
-		activityAdd(city,"左侧边栏底部");
+		activityAdd("左侧边栏底部");
 		Thread.sleep(3000);
 		d.findElementClick("link","评价标签下面");
-		activityAdd(city,"评价标签下面");
+		activityAdd("评价标签下面");
 		Thread.sleep(3000);
 		d.findElementClick("link","启动页");
-		activityAdd(city,"启动页");
+		activityAdd("启动页");
 		Thread.sleep(3000);
 	}
 	/**
 	 * 顶部通知栏
 	 */
-	@Parameters({"city"})
-	public void topAdd(String city) throws InterruptedException {
+	public void topAdd() throws InterruptedException {
 		d.findElementClick("link","出租车顶部通知");
 		Thread.sleep(3000);
 		//点击新增按钮
@@ -129,8 +126,7 @@ public class MarketingCenter {
 	 * App活动新增查询操作
 	 * @throws InterruptedException
 	 */
-	@Parameters({"city"})
-	public void activityAdd (String city,String menu) throws InterruptedException
+	public void activityAdd (String menu) throws InterruptedException
 	{
 		Thread.sleep(3000);
 		d.findElementClick("link", "新增");
@@ -261,11 +257,8 @@ public class MarketingCenter {
 	public void passengerRecharge(String freeMoney) throws InterruptedException {
 		Thread.sleep(2000);
 		Logger.Output(LogType.LogTypeName.INFO, "准备执行乘客充值编辑及检测该页面是否有默认的6个优惠策略");
-		if(d.findElement("link","乘客充值管理").isDisplayed())
+		if(driver.getPageSource().contains("乘客充值管理"))
 		{
-			Logger.Output(LogType.LogTypeName.INFO, "乘客充值菜单项未显示");
-		}
-		else{
 			d.findElementClick("link", "乘客充值管理");
 			Thread.sleep(2000);
 			// 判断乘客充值管理下是否6个充值策略都显示
@@ -291,6 +284,11 @@ public class MarketingCenter {
 			{
 				Logger.Output(LogType.LogTypeName.ERROR, "乘客充值编辑失败");
 			}
+
+		}
+		else{
+			Logger.Output(LogType.LogTypeName.INFO, "乘客充值菜单项未显示");
+
 		}
 
 	}
@@ -314,6 +312,7 @@ public class MarketingCenter {
 	}
 	@AfterClass
 	public void afterClass() {
+
 		driver.quit();
 	}
 

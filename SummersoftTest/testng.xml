@@ -3,10 +3,8 @@
 <suite name="All Test Suite">
     <parameter name="username" value="chentt"/>
     <parameter name="password" value="Ctt5477."/>
-    <!--<parameter name="agent" value="兰陨代理12"/>-->
-    <!--<parameter name="shortName" value="蓝韵企业12"/>-->
-    <!--<parameter name="city" value="厦门市"/>-->
-    <!--<parameter name="carType" value="出租车"/>-->
+     <!--系统设置中开通类型-->
+    <parameter name="carType" value="出租车"/>
     <listeners>
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
@@ -26,8 +24,8 @@
             <!--<class name="com.summersoft.ctt.yycx.test.SystemSetting">-->
             <!--<parameter name="province" value="福建省" />-->
             <!--<methods>-->
-            <!--<include name="chuzucheSystemSet"></include>-->
-            <!--<include name="scopeOfBusiness"></include>-->
+                <!--<include name="scopeOfBusiness"></include>-->
+                <!--<include name="chuzucheSystemSet"></include>-->
             <!--<include name="kuaicheSystemSet"></include>-->
             <!--<include name="zhuancheSystemSet"></include>-->
             <!--</methods>-->
@@ -37,12 +35,12 @@
             <!--<parameter name="responsibleIdCard" value="350521199002076026" />-->
             <!--<parameter name="phone" value="15969181192" />-->
             <!--<methods>-->
-            <!--&lt;!&ndash;<include name="addPlatformInfo"></include>&ndash;&gt;-->
+            <!--<include name="addPlatformInfo"></include>-->
             <!--<include name="regionalManager"></include>-->
             <!--<include name="businessManager"></include>-->
             <!--<include name="vehicleManager"></include>-->
             <!--<include name="driverManager"></include>-->
-            <!--&lt;!&ndash;<include name="driverMessage"></include>&ndash;&gt;-->
+            <!--<include name="driverMessage"></include>-->
             <!--</methods>-->
             <!--</class>-->
 
@@ -52,7 +50,9 @@
            <include name="regionalManager"></include>
             <include name="businessManager"></include>
             <include name="vehicleManager"></include>
-           <include name="driverManager"></include>
+
+           <!--<include name="driverManager"></include>-->
+
             </methods>
            </class>
 

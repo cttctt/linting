@@ -36,18 +36,18 @@ public class MyWebdriver {
     public static String RANDOM = String.valueOf(new Date().getTime());
     //开通项目的类型（约约：区域类型开通三个出租车|专车|快车，易行通：出租车,其他：专车和快车）
     public static String ProjectType = "易行通";
-    //旧版时的业务类型
-   public static String bussinessType="出租车";
+//    //旧版时的业务类型
+//   public static String bussinessType="出租车";
     //开通区域代理城市
     public static String city = "厦门市";
     // 约约测试服后台地址
-    public static String baseURL = "http://5000.gr165c6f.summersoft.ali-sh.goodrain.net:10080/admin/index.html";
+   public static String baseURL = "http://5000.gr165c6f.summersoft.ali-sh.goodrain.net:10080/admin/index.html";
     //轩轩测试服后台地址
     //  public static String baseURL="http://59.110.8.172:8380/admin/index.html";
     //国金测试服后台地址
     //public static String baseURL="https://admin.jishiyongche.com";
     //华威易行通后台地址
-  //  public static String baseURL="http://139.159.234.143:8380/admin/index.html";
+  // public static String baseURL="http://139.159.234.143:8380/admin/index.html";
     //美天后台测试地址
     //public static String baseURL="http://120.55.41.65:8380/admin/index.html";
     //万合测试后台地址
@@ -89,7 +89,7 @@ public class MyWebdriver {
      */
     public void getMessage()
     {
-        WebDriverWait wait=new WebDriverWait(driver,10);
+        WebDriverWait wait=new WebDriverWait(driver,15);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("toast-message")));
         Logger.Output(LogType.LogTypeName.INFO, driver.findElement(By.className("toast-message")).getText());
     }

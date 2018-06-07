@@ -41,6 +41,8 @@ public class SystemSetting {
 	public static String  waitTime="3";
 	public static WebDriver driver;
 	public static MyWebdriver d;
+	public static String city=MyWebdriver.city;
+
 
 	public static void vehicle() throws Exception {
 		String levelName = RandomValue.getChineseName();
@@ -95,8 +97,8 @@ public class SystemSetting {
 	 * @throws InterruptedException
 	 */
 	@Test
-	@Parameters({ "carType", "province", "city" })
-	public static void scopeOfBusiness(String carType, String province, String city) throws InterruptedException {
+	@Parameters({ "carType", "province"})
+	public static void scopeOfBusiness(String carType, String province) throws InterruptedException {
 
 		Thread.sleep(3000);
 		d.findElementClick("link", "系统设置中心");
@@ -273,6 +275,7 @@ public class SystemSetting {
 		Thread.sleep(3000);
 		//即使用车下第一个编辑按钮
 		se.clickUpdateBtn();
+
 		Thread.sleep(3000);
 		se.inputStartFare(price);
 		se.clickSubmitBtn();
@@ -442,7 +445,6 @@ public class SystemSetting {
 	}
 	@AfterClass
 	public void afterClass() {
-
 		driver.quit();
 	}
 

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="E:/SummersoftTest"
+<testsuite name="chromeTest"
            tests="3"
            failures="0"
            errors="0"
            skipped="0"
-           time="72.185">
+           time="123.518">
   <properties />
   
   
-            <testcase name="passengerInfomation" time="22.164" classname="com.summersoft.ctt.yycx.test.PassengerServiceCenter" />
-                <testcase name="passengerMessage" time="27.678" classname="com.summersoft.ctt.yycx.test.PassengerServiceCenter" />
-                <testcase name="passengerInfomation" time="22.343" classname="com.summersoft.ctt.yycx.test.PassengerServiceCenter" />
+            <testcase name="passengerInfomation" time="48.955" classname="com.summersoft.ctt.yycx.test.PassengerServiceCenter" />
+                <testcase name="passengerInfomation" time="46.289" classname="com.summersoft.ctt.yycx.test.PassengerServiceCenter" />
+                <testcase name="passengerMessage" time="28.274" classname="com.summersoft.ctt.yycx.test.PassengerServiceCenter" />
       
 </testsuite>

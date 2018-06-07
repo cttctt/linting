@@ -2,16 +2,18 @@ package com.summersoft.ctt.yycx.po;
 
 import com.summersoft.ctt.yycx.page.*;
 import com.summersoft.ctt.yycx.util.*;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.Cookie;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+import org.testng.AssertJUnit;
 import org.testng.annotations.*;
+import org.testng.asserts.Assertion;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class OperationManagerPo {
@@ -595,6 +597,8 @@ public class OperationManagerPo {
         vehicle.inputEnginePower(ExcelUtil.getCellAsString(42, 4));
 //        车辆轴距
         vehicle.inputWheelbase(ExcelUtil.getCellAsString(43, 4));
+        //车辆行驶里程
+      vehicle.inputVehicleKilometers(ExcelUtil.getCellAsNumber(56,4));
 //        选择车辆检修状态
         vehicle.selectFixState(ExcelUtil.getCellAsString(44, 4));
 //        选择下年检时间
@@ -648,7 +652,7 @@ public class OperationManagerPo {
             vehicle.inputOwnerName(ownerName);
             vehicle.inputOwnerNameMobile(ownerNameMobile);
             Thread.sleep(3000);
-            vehicle.clickSubmitBtn();
+           vehicle.clickSubmitBtn();
             d.getMessage();
             Thread.sleep(3000);
             d.findElementClick("link", "出租车");
@@ -793,6 +797,60 @@ public class OperationManagerPo {
         }
 
     }
+    //检验车辆信息是否都有值
+    public void test(String carTypeName)throws Exception
+    {
+//        driver.navigate().back();
+//        Thread.sleep(3000);
+//        d.findElementClick("xpath","营运管理中心");
+//        Thread.sleep(3000);
+//        d.findElementClick("xpath","车辆管理");
+//        Thread.sleep(3000);
+//        d.findElementClick("xpath","出租车");
+//        Thread.sleep(3000);
+//        d.findElementClick("xpath","//*[@id=\"taxi_table\"]/tbody/tr/td[6]/a[2]");
+        if(carTypeName.equals("出租车"))
+        {
+
+            d.findElementClick("xpath","//*[@id=\"taxi_table\"]/tbody/tr[1]/td[6]/a[2]");
+        }
+        if(carTypeName.equals("专车"))
+        {
+            d.findElementClick("xpath","//*[@id=\"spec_table\"]/tbody/tr[1]/td[9]/a[2]");
+        }
+        if(carTypeName.equals("快车"))
+        {
+            d.findElementClick("xpath","//*[@id=\"express_table\"]/tbody/tr[1]/td[8]/a[2]");
+        }
+        Thread.sleep(3000);
+        d.findElementClick("xpath","//*[@id=\"setMore\"]/div/li/i");
+        //查看所有的input是否都有值
+        List<WebElement> list= driver.findElements(By.cssSelector("input"));
+        System.out.println(list.get(0).getAttribute("value"));
+        for(int i=0;i<list.size();i++) {
+
+            if ( list.get(i).getAttribute("value").isEmpty()) {
+                if(list.get(i).getAttribute("name").contains("File"))
+                {
+                    continue;
+                }
+                else{
+                    Logger.Output(LogType.LogTypeName.ERROR,list.get(i).getAttribute("name") + "项数据丢失");
+
+                }
+            }
+        }
+        //查看所有下拉列表是否都有值
+        List<WebElement> li= driver.findElements(By.cssSelector("option"));
+        for(int j=0;j<li.size();j++)
+        {
+            if(li.get(j).isSelected()&&li.get(j).getText().contains("请选择"))
+            {
+                    Logger.Output(LogType.LogTypeName.ERROR,li.get(j).getText() + "项数据丢失");
+            }
+        }
+
+    }
 
     //添加司机
     private void addDriver(String carTypeName) throws Exception {
@@ -819,7 +877,9 @@ public class OperationManagerPo {
         }
         driverManager.uploadFaceFile(ExcelUtil.getCellAsString(5, 4));
         driverManager.selectAgent(agent);
+        Thread.sleep(2000);
         driverManager.selectCompany(companyName);
+        Thread.sleep(2000);
         driverManager.selectCity(cityName);
         Thread.sleep(3000);
         driverManager.selectBusiness(carTypeName);
@@ -977,32 +1037,61 @@ public class OperationManagerPo {
         driverManager.inputEmergencyContactPhone(ExcelUtil.getCellAsString(66, colNum));
 //                输入地址
         driverManager.inputEmergencyContactAddress(ExcelUtil.getCellAsString(67, colNum));
-        Thread.sleep(3000);
+       // Thread.sleep(3000);
         driverManager.clickSubmitBtn();
         d.getMessage();
-        Thread.sleep(2000);
+        Thread.sleep(8000);
         driverManager.clickBingding();
-//        //封号处理
-//        if (type.equals("出租车")) {
-//            Thread.sleep(2000);
-//            d.findElementClick("link","出租车");
-//            driverManager.clickChangeStatus();
-//        }
-//        if (type.equals("专车")) {
-//            Thread.sleep(2000);
-//            d.findElementClick("link","专车");
-//            driverManager.clickChangeStatus();
-//
-//        }
-//        if (type.equals("快车")) {
-//            Thread.sleep(2000);
-//            d.findElementClick("link","快车");
-//            driverManager.clickChangeStatus();
-//        }
 
+        //封号处理
+        if (type.equals("出租车")) {
+            Thread.sleep(2000);
+            d.findElementClick("link","出租车");
+            driverManager.clickChangeStatus();
+        }
+        if (type.equals("专车")) {
+            Thread.sleep(2000);
+            d.findElementClick("link","专车");
+            driverManager.clickChangeStatus();
+
+        }
+        if (type.equals("快车")) {
+            Thread.sleep(2000);
+            d.findElementClick("link","快车");
+            driverManager.clickChangeStatus();
+        }
+        Thread.sleep(3000);
+        d.findElementSendKeys("name", "abortTime", "2019-02-09 20:00:00");
+        Thread.sleep(3000);
+        d.findElementSendKeys("name", "abortRemark", "短期封号的封号测试备注");
+        d.setTimeOut();
+        d.findElementClick("css", ".btn-determine");
+        Thread.sleep(3000);
+        String status = d.findElement("xpath", "//*[@id=\"changeStatus\"]").getText();
+        if (status.equals("解封")) {
+            Logger.Output(LogType.LogTypeName.INFO, "短期封号操作成功");
+        } else {
+            Logger.Output(LogType.LogTypeName.ERROR, "短期封号操作失败");
+
+        }
+        // 执行解封操作
+        d.findElementClick("xpath", "//*[@id=\"changeStatus\"]");
+        d.setTimeOut();
+        d.findElementClick("css", ".btn-determine");
+        Thread.sleep(3000);
+        String status1 = d.findElement("xpath", "//*[@id=\"changeStatus\"]").getText();
+        if (status1.equals("封号")) {
+            Logger.Output(LogType.LogTypeName.INFO, "解封操作成功");
+
+        } else {
+            Logger.Output(LogType.LogTypeName.ERROR, "解封操作失败");
+
+        }
 
 
     }
+
+
 
     @Test
     //司机管理
@@ -1035,7 +1124,6 @@ public class OperationManagerPo {
                 addDriver("出租车");
                 //修改司机操作（新增非必录项）
                 updateDriver("出租车");
-
                 break;
             default:
                 Thread.sleep(3000);
@@ -1073,6 +1161,8 @@ public class OperationManagerPo {
             case "易行通":
                 d.findElementClick("link", "出租车");
                 addVehicle("出租车");
+                //新增完毕后所有字段的校验
+                test("出租车");
                 break;
             default:
                 Thread.sleep(3000);
@@ -1095,6 +1185,6 @@ public class OperationManagerPo {
     @AfterClass
     public void afterClass() {
 
-     //   driver.quit();
+    // driver.quit();
     }
 }

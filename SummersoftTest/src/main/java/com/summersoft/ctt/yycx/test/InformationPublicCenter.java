@@ -92,12 +92,7 @@ public class InformationPublicCenter {
 		status.selectByValue("1");
 		Thread.sleep(3000);
 		d.findElementClick("css", ".btn.btn-info.waves-effect.waves-light");
-
 		d.sleep();
-//		WebElement table = d.findElement("id", "feedback_table");
-//		List<WebElement> rows = table.findElements(By.tagName("tr"));
-//		int rowsSize = rows.size();
-
 		if (driver.getPageSource().contains(MyWebdriver.tableMessage)) {
 			Logger.Output(LogType.LogTypeName.INFO, "司机投诉暂无未处理信息的订单");
 		} else {
@@ -145,6 +140,8 @@ public class InformationPublicCenter {
 		driver.switchTo().defaultContent();
 		Thread.sleep(3000);
 		d.findElementClick("xpath", "//*[@id=\"editForm\"]/div[9]/div/div[1]/a");
+		Thread.sleep(3000);
+		d.findElementClick("link","信息发布中心");
 		Thread.sleep(3000);
 		d.findElementClick("link", "文章管理");
 		Thread.sleep(3000);
@@ -214,6 +211,8 @@ public class InformationPublicCenter {
 		Thread.sleep(3000);
 		d.findElementClick("xpath", "//*[@id=\"editForm\"]/div[9]/div/div[1]/a");
 		Thread.sleep(3000);
+		d.findElementClick("link","信息发布中心");
+		Thread.sleep(3000);
 		d.findElementClick("link", "文章管理");
 		Thread.sleep(3000);
 		// 查看列表中的文章名称第一条是否是刚才新增的文章
@@ -246,7 +245,7 @@ public class InformationPublicCenter {
 	@AfterClass
 	public void afterClass() {
 
-		driver.quit();
+	//	driver.quit();
 	}
 
 }

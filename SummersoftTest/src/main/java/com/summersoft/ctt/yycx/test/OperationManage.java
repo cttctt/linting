@@ -1240,44 +1240,234 @@ public class OperationManage {
     public void  addDriver(String carTypeName) throws Exception {
         DriverManager driverManager = PageFactory.initElements(driver, DriverManager.class);
         ExcelUtil.setExcelFile(excelPath, "driver");
+        int colNum = 4;
         Thread.sleep(5000);
         driverManager.clickAddBtn();
         Thread.sleep(3000);
-        driverManager.uploadFaceFile(ExcelUtil.getCellAsString(5, 4));
+        Logger.Output(LogType.LogTypeName.INFO, "基本信息");
+        driverManager.uploadFaceFile(ExcelUtil.getCellAsString(5, colNum));
         if (carTypeName.equals("快车")) {
             driverManager.inputName(fastDriverName);
             //        选择性别
-            driverManager.selectSex(ExcelUtil.getCellAsString(17, 4));
-            driverManager.inputIdCard(ExcelUtil.getCellAsString(3, 4));
+            driverManager.selectSex(ExcelUtil.getCellAsString(17, colNum));
+            driverManager.inputIdCard(ExcelUtil.getCellAsString(3, colNum));
             driverManager.inputMobile(fastDriverMobile);
         }
         if (carTypeName.equals("专车")) {
             driverManager.inputName(specDriverName);
-            driverManager.selectSex(ExcelUtil.getCellAsString(17, 4));
-            driverManager.inputIdCard(ExcelUtil.getCellAsString(3, 4));
+            driverManager.selectSex(ExcelUtil.getCellAsString(17, colNum));
+            driverManager.inputIdCard(ExcelUtil.getCellAsString(3, colNum));
             driverManager.inputMobile(specDriverMobile);
         }
         if (carTypeName.equals("出租车")) {
             driverManager.inputName(taxiDriverName);
-            driverManager.selectSex(ExcelUtil.getCellAsString(17, 4));
-            driverManager.inputIdCard(ExcelUtil.getCellAsString(3, 4));
+            driverManager.selectSex(ExcelUtil.getCellAsString(17, colNum));
+            driverManager.inputIdCard(ExcelUtil.getCellAsString(3, colNum));
             driverManager.inputMobile(taxiDriverMobile);
 
         }
 //        输入联系地址
-        driverManager.inputDriverContactAddress(ExcelUtil.getCellAsString(18, 4));
+        driverManager.inputDriverContactAddress(ExcelUtil.getCellAsString(18, colNum));
 //        上传身份证正面
-        driverManager.uploadIdCard(ExcelUtil.getCellAsString(19,4));
+        driverManager.uploadIdCard(ExcelUtil.getCellAsString(19, colNum));
 //        上传身份证背面
-        driverManager.uploadIdCardBack(ExcelUtil.getCellAsString(20,4));
+        driverManager.uploadIdCardBack(ExcelUtil.getCellAsString(20, colNum));
 //        上传手持身份证
-        driverManager.uploadIdCardImg(ExcelUtil.getCellAsString(21,4));
+        driverManager.uploadIdCardImg(ExcelUtil.getCellAsString(21, colNum));
+        driverManager.selectAgent(agent);
+        driverManager.selectCompany(companyName);
+        driverManager.selectCity(cityName);
         //        输入分组信息
-        driverManager.inputDriverNo(ExcelUtil.getCellAsNumber(22, 4));
-        d.findElementClick("xpath","//*[@id=\"driverForm\"]/div/div/div[1]/div[3]/input");
+        driverManager.inputDriverNo(ExcelUtil.getCellAsNumber(22, colNum));
+        d.findElementClick("xpath", "//*[@id=\"driverForm\"]/div/div/div[1]/div[3]/input");
+        d.getMessage();
+        Thread.sleep(2000);
+//因为会有个关联提示框，所以分两次新增
+        driver.navigate().back();
+        Thread.sleep(3000);
+        d.findElementClick("xpath", "//*[@id=\"taxiDriver_table\"]/tbody/tr[1]/td[12]/a[2]");
+
+        Thread.sleep(3000);
+        Logger.Output(LogType.LogTypeName.INFO, "驾驶证信息");
+        d.findElementClick("link", "驾驶证信息");
+        //        输入驾驶证号
+        driverManager.inputLicenseIdByName(ExcelUtil.getCellAsString(23, colNum));
+
+//        上传驾驶证正面
+        driverManager.uploadDrivingLicenceHomeImgFile(ExcelUtil.getCellAsString(24, colNum));
+//        上传驾驶证反面
+        driverManager.uploadDrivingLicenceSubImgFile(ExcelUtil.getCellAsString(25, colNum));
+//        上传驾驶证pdf
+        driverManager.uploadDrivingLicencePDFFile(ExcelUtil.getCellAsString(26, colNum));
+//        选择准驾车型
+        driverManager.selectDriverType(ExcelUtil.getCellAsString(27, colNum));
+//        选择初次领证日期
+        driverManager.selectDriverLicenseDate(ExcelUtil.getCellAsDate(28, colNum));
+//        选择驾驶证有效期起
+        driverManager.selectDriverLicenseOn(ExcelUtil.getCellAsDate(29, colNum));
+//        选择驾驶证有效期止
+        driverManager.selectDriverLicenseOff(ExcelUtil.getCellAsDate(30, colNum));
+//        输入交通违章次数
+        driverManager.inputTrafficViolationsCount(ExcelUtil.getCellAsNumber(31, colNum));
+//        输入交通事故次数
+        driverManager.inputTrafficAccidentCount(ExcelUtil.getCellAsNumber(32, colNum));
+        d.findElementClick("xpath", "//*[@id=\"driverForm\"]/div/div/div[2]/div[3]/input");
+        d.getMessage();
+        Logger.Output(LogType.LogTypeName.INFO, "网约车资质信息");
+        d.findElementClick("link", "网约车资质信息");
+        //        输入网络资格证号
+        driverManager.inputCertificateNo(ExcelUtil.getCellAsString(33, colNum));
+//        输入发证机构
+        driverManager.inputNetworkCarIssueOrganization(ExcelUtil.getCellAsString(34, colNum));
+//        选择发证日期
+        driverManager.selectNetworkCarIssueDate(ExcelUtil.getCellAsDate(35, colNum));
+//        选择初次领证日期
+        driverManager.selectNetworkCarProofDate(ExcelUtil.getCellAsDate(36, colNum));
+//        选择有效期起
+        driverManager.selectNetworkCarProofOn(ExcelUtil.getCellAsDate(37, colNum));
+//        选择有效期止
+        driverManager.selectNetworkCarProofOff(ExcelUtil.getCellAsDate(38, colNum));
+//        选择报备日期
+        driverManager.selectRegisterDate(ExcelUtil.getCellAsDate(39, colNum));
+        d.findElementClick("xpath", "//*[@id=\"driverForm\"]/div/div/div[3]/div[3]/input");
+        d.getMessage();
+        Logger.Output(LogType.LogTypeName.INFO, "合同信息");
+        d.findElementClick("link", "合同信息");
+//        选择服务类型
+        driverManager.selectCommercialType(ExcelUtil.getCellAsString(40, colNum));
+//        输入签署公司
+        driverManager.inputContractCompany(ExcelUtil.getCellAsString(41, colNum));
+//        选择合同签订日期
+        driverManager.selectContractSign(ExcelUtil.getCellAsDate(42, colNum));
+//        选择合同有效期起
+        driverManager.selectContractOn(ExcelUtil.getCellAsDate(43, colNum));
+//        选择合同有效期止
+        driverManager.selectContractOff(ExcelUtil.getCellAsDate(44, colNum));
+//        上传合同扫描
+        driverManager.uploadContractPhotoPDFFile(ExcelUtil.getCellAsString(45, colNum));
+//        选择合同类型
+        driverManager.selectContractTypeByName(ExcelUtil.getCellAsString(46, colNum));
+
+        d.findElementClick("xpath", "//*[@id=\"driverForm\"]/div/div/div[4]/div[3]/input");
+        d.getMessage();
+        Logger.Output(LogType.LogTypeName.INFO, "培训信息");
+        d.findElementClick("link", "培训信息");
+//        选择培训类型
+        driverManager.selectType(ExcelUtil.getCellAsString(47, colNum));
+//        输入培训课程名称
+        driverManager.inputCourseName(ExcelUtil.getCellAsString(48, colNum));
+//        选择培训课程日期
+        driverManager.selectCourseDate(ExcelUtil.getCellAsDate(49, colNum));
+//                选择培训开始时间
+        driverManager.selectStartTime(ExcelUtil.getCellAsDate(50, colNum));
+//                选择培训结束时间
+        driverManager.selectStopTime(ExcelUtil.getCellAsDate(51, colNum));
+//                输入培训时长
+        driverManager.inputDuration(ExcelUtil.getCellAsNumber(52, colNum));
+        d.findElementClick("xpath", "//*[@id=\"driverTrain\"]/div/div[3]/input[2]");
+        d.getMessage();
+        Logger.Output(LogType.LogTypeName.INFO, "银行信息");
+        d.findElementClick("link", "银行信息");
+        //                输入户名
+        driverManager.inputBankAccountName(ExcelUtil.getCellAsString(53, colNum));
+//                输入账号
+        driverManager.inputBankAccount(ExcelUtil.getCellAsString(54, colNum));
+//                输入银行
+        driverManager.inputBankName(ExcelUtil.getCellAsString(55, colNum));
+//                输入银行地址
+        driverManager.inputBankAddress(ExcelUtil.getCellAsString(56, colNum));
+//                上传银行照片
+        driverManager.uploadBankPhotoFile(ExcelUtil.getCellAsString(57, colNum));
+        d.findElementClick("xpath", "//*[@id=\"driverForm\"]/div/div/div[6]/div[3]/div[5]/input");
+        d.getMessage();
+        Logger.Output(LogType.LogTypeName.INFO, "其他信息");
+        d.findElementClick("link", "其他信息");
+//                上传体检报告
+        driverManager.uploadExaminateReportPDFFile(ExcelUtil.getCellAsString(58, colNum));
+//                选择民族
+        driverManager.selectDriverNation(ExcelUtil.getCellAsString(59, colNum));
+//                选择婚姻状况
+        driverManager.selectDriverMaritalStatus(ExcelUtil.getCellAsString(60, colNum));
+//                选择外语能力
+        driverManager.selectDriverLanguageLevel(ExcelUtil.getCellAsString(61, colNum));
+//                选择学历
+        driverManager.selectDriverEducation(ExcelUtil.getCellAsString(62, colNum));
+//                输入户口登记机关
+        driverManager.inputDriverCensus(ExcelUtil.getCellAsString(63, colNum));
+//                输入户口住址
+        driverManager.inputDriverAddress(ExcelUtil.getCellAsString(64, colNum));
+//                输入紧急联系人
+        driverManager.inputEmergencyContact(ExcelUtil.getCellAsString(65, colNum));
+
+//                输入联系电话
+        driverManager.inputEmergencyContactPhone(ExcelUtil.getCellAsString(66, colNum));
+//                输入地址
+        driverManager.inputEmergencyContactAddress(ExcelUtil.getCellAsString(67, colNum));
+        d.findElementClick("xpath", "//*[@id=\"driverForm\"]/div/div/div[7]/div[3]/input");
+        d.getMessage();
+        Logger.Output(LogType.LogTypeName.INFO, "车辆信息");
+        d.findElementClick("link", "车辆信息");
+        if (carTypeName.equals("快车")) {
+            driverManager.inputPlateNum(fastPlateNum);
+        }
+        if (carTypeName.equals("专车")) {
+            driverManager.inputPlateNum(specPlateNum);
+        }
+        if (carTypeName.equals("出租车")) {
+            driverManager.inputPlateNum(taxiPlateNum);
+        }
+        d.findElementClick("xpath", "//*[@id=\"driverForm\"]/div/div/div[8]/div[3]/div[6]/label[1]");
+        // driverManager.clickCarInfoBtn();
+        Thread.sleep(3000);
+        //点击绑定
+        d.findElementClick("xpath", "//*[@id=\"driverForm\"]/div/div/div[8]/div[3]/input[2]");
         d.getMessage();
 
+
+        //封号操作
+        d.findElementClick("link", "营运管理中心");
+        Thread.sleep(3000);
+        d.findElementClick("link", "司机管理");
+//        d.findElementSendKeys("name", "conditions", ownerNameMobile);
+//        d.findElementClick("xpath", "//*[@id=\"taxiDriver\"]/form/div[6]/a");
+        Thread.sleep(3000);
+        String type = d.findElement("xpath", "//*[@id=\"changeStatus\"]").getText();
+        if (type.equals("封号")) {
+            d.findElementClick("xpath", "//*[@id=\"changeStatus\"]");
+            Thread.sleep(3000);
+            d.findElementSendKeys("name", "abortTime", "2019-02-09 20:00:00");
+            Thread.sleep(3000);
+            d.findElementSendKeys("name", "abortRemark", "短期封号的封号测试备注");
+            d.setTimeOut();
+            d.findElementClick("css", ".btn-determine");
+            Thread.sleep(3000);
+            String status = d.findElement("xpath", "//*[@id=\"changeStatus\"]").getText();
+            if (status.equals("解封")) {
+                Logger.Output(LogTypeName.INFO, "短期封号操作成功");
+            } else {
+                Logger.Output(LogTypeName.ERROR, "短期封号操作失败");
+
+            }
+        } else {
+
+            // 执行解封操作
+            d.findElementClick("xpath", "//*[@id=\"changeStatus\"]");
+            d.setTimeOut();
+            d.findElementClick("css", ".btn-determine");
+            Thread.sleep(3000);
+            String status = d.findElement("xpath", "//*[@id=\"changeStatus\"]").getText();
+            if (status.equals("封号")) {
+                Logger.Output(LogTypeName.INFO, "解封操作成功");
+
+            } else {
+                Logger.Output(LogTypeName.ERROR, "解封操作失败");
+
+            }
+
+        }
     }
+
+
 
     @Test
     public void driverManager() throws Exception {

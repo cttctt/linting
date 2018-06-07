@@ -123,7 +123,7 @@ public class VehicleManager {
     }
 
     //保存按钮
-    @FindBy(className = "btn-save")
+    @FindBy(xpath = "//*[@id=\"carForm\"]/div/div[3]/input")
     private  WebElement submitBtn;
     public  void clickSubmitBtn()
     {
@@ -421,6 +421,14 @@ public class VehicleManager {
         wheelbase.sendKeys(str);
 
     }
+    //车辆行驶里程
+    @FindBy(name = "vehicleKilometers")
+    private WebElement vehicleKilometers;
+    public void inputVehicleKilometers(String str)
+    {
+        vehicleKilometers.sendKeys(str);
+    }
+
     //    选择车辆检修状态
     @FindBy(name="fixState")
     private  WebElement fixState;

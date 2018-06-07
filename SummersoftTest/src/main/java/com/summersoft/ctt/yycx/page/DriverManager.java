@@ -78,12 +78,14 @@ public class DriverManager {
     }
 
     //展开按钮
-    @FindBy(className ="info-title-down" )
+    @FindBy(xpath = "//*[@id=\"setMore\"]/div/li/a/i")
+  //  @FindBy(className ="info-title-down" )
     private  WebElement downBtn;
     public void clickDownBtn()
     {
         downBtn.click();
     }
+
     //保存按钮
     @FindBy(className = "btn-save")
     private  WebElement submitBtn;
@@ -175,6 +177,12 @@ private WebElement  licenseId;
     public void inputLicenseId(String str)
     {
         licenseId.sendKeys(str);
+    }
+    @FindBy(name="licenseId")
+    private WebElement  licenseId1;
+    public void inputLicenseIdByName(String str)
+    {
+        licenseId1.sendKeys(str);
     }
 //    上传驾驶证正面	
 @FindBy(id="drivingLicenceHomeImgFile")
@@ -346,6 +354,14 @@ private WebElement contractType;
         Select sel=new Select(contractType);
         sel.selectByVisibleText(str);
     }
+    @FindBy(name="contractType")
+    private WebElement contractType1;
+    public  void selectContractTypeByName(String str)
+    {
+        Select sel=new Select(contractType1);
+        sel.selectByVisibleText(str);
+    }
+
 //    选择培训类型	 
 @FindBy(name="driverTrainDtoList[0].type")
 private WebElement type;

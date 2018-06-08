@@ -1055,10 +1055,13 @@ public class OperationManagerPo {
         }
         if (type.equals("快车")) {
             Thread.sleep(2000);
-            d.findElementClick("link","快车");
-            d.findElementSendKeys("name","conditions",fastDriverMobile);
-            d.findElementClick("xpath","//*[@id=\"expressDriver\"]/form/div[5]/a");
+            d.findElementClick("link","司机管理");
             Thread.sleep(3000);
+            d.findElementClick("link","快车");
+//            d.findElementSendKeys("name","conditions",fastDriverMobile);
+//            d.findElementClick("xpath","//*[@id=\"expressDriver\"]/form/div[5]/a");
+//            Thread.sleep(3000);
+            System.out.println("已经重新跑了一遍了");
             driverManager.clickChangeStatus();
         }
         Thread.sleep(3000);

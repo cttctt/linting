@@ -135,8 +135,6 @@ public class VehicleManager {
     public  void clickSearchBtn()
     {
         searchBtn.click();
-
-
     }
 
 

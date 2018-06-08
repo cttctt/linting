@@ -21,6 +21,7 @@
             </class>
 
 
+
             <!--<class name="com.summersoft.ctt.yycx.test.SystemSetting">-->
             <!--<parameter name="province" value="福建省" />-->
             <!--<methods>-->
@@ -46,14 +47,11 @@
 
             <class name="com.summersoft.ctt.yycx.po.OperationManagerPo">
            <methods>
-
             <!--<include name="addPlatformInfo"></include>-->
-           <include name="regionalManager"></include>
+            <include name="regionalManager"></include>
             <include name="businessManager"></include>
             <include name="vehicleManager"></include>
-
-           <!--<include name="driverManager"></include>-->
-
+            <include name="driverManager"></include>
             </methods>
            </class>
 

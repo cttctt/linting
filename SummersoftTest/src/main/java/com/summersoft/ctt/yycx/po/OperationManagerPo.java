@@ -704,8 +704,8 @@ public class OperationManagerPo {
             vehicle.inputOwnerNameMobile(ownerNameMobile);
             Thread.sleep(3000);
             vehicle.clickSubmitBtn();
+            d.getMessage();
             Thread.sleep(3000);
-
             d.findElementClick("link", "快车");
             Thread.sleep(3000);
             d.findElementSendKeys("xpath", "//*[@id=\"express\"]/form/div[3]/div/input", fastPlateNum);
@@ -759,6 +759,7 @@ public class OperationManagerPo {
             vehicle.inputOwnerNameMobile(ownerNameMobile);
             Thread.sleep(3000);
             vehicle.clickSubmitBtn();
+            d.getMessage();
             Thread.sleep(3000);
             d.findElementClick("link", "专车");
             Thread.sleep(3000);
@@ -798,54 +799,11 @@ public class OperationManagerPo {
         }
 
     }
-//    @Test
-//    public void chendd() throws InterruptedException {
-//        d.findElementClick("xpath","营运管理中心");
-//        Thread.sleep(3000);
-//        d.findElementClick("xpath","车辆管理");
-//        Thread.sleep(3000);
-//        d.findElementClick("xpath","出租车");
-//        Thread.sleep(3000);
-//        d.findElementClick("xpath","//*[@id=\"taxi_table\"]/tbody/tr/td[6]/a[2]");
-//        Thread.sleep(3000);
-//        d.findElementClick("xpath","//*[@id=\"setMore\"]/div/li/i");
-//        //查看所有的input是否都有值
-//        List<WebElement> list= driver.findElements(By.cssSelector("input[type='text']"));
-//        for(int i=0;i<list.size();i++) {
-//            if ( list.get(i).getAttribute("value").isEmpty()) {
-//                if(list.get(i).getAttribute("name").contains("File"))
-//                {
-//                    continue;
-//                }
-//                else{
-//                    Logger.Output(LogType.LogTypeName.ERROR,list.get(i).getAttribute("name") + "项数据丢失");
-//                }
-//            }
-//        }
-//        //查看所有下拉列表是否都有值
-//        List<WebElement> li= driver.findElements(By.cssSelector("option"));
-//        for(int j=0;j<li.size();j++)
-//        {
-//            if(li.get(j).isSelected()&&li.get(j).getText().contains("请选择"))
-//            {
-//                Logger.Output(LogType.LogTypeName.ERROR,li.get(j).getText() + "项数据丢失");
-//            }
-//        }
-//    }
 
 
     //检验车辆信息是否都有值
-    public void test(String carTypeName)throws Exception
+    public void vehicleVerify(String carTypeName)throws Exception
     {
-//        driver.navigate().back();
-//        Thread.sleep(3000);
-//        d.findElementClick("xpath","营运管理中心");
-//        Thread.sleep(3000);
-//        d.findElementClick("xpath","车辆管理");
-//        Thread.sleep(3000);
-//        d.findElementClick("xpath","出租车");
-//        Thread.sleep(3000);
-//        d.findElementClick("xpath","//*[@id=\"taxi_table\"]/tbody/tr/td[6]/a[2]");
         if(carTypeName.equals("出租车"))
         {
 
@@ -884,6 +842,8 @@ public class OperationManagerPo {
                     Logger.Output(LogType.LogTypeName.ERROR,li.get(j).getText() + "项数据丢失");
             }
         }
+        driver.navigate().back();
+        Thread.sleep(3000);
 
     }
 
@@ -955,11 +915,13 @@ public class OperationManagerPo {
             driverManager.clickDownBtn();
         }
         if (type.equals("专车")) {
+            Thread.sleep(2000);
             driverManager.clickSpecUpdateBtn();
             Thread.sleep(3000);
             driverManager.clickDownBtn();
         }
         if (type.equals("快车")) {
+            Thread.sleep(2000);
             driverManager.clickFastdateBtn();
             Thread.sleep(3000);
             driverManager.clickDownBtn();
@@ -1056,9 +1018,9 @@ public class OperationManagerPo {
 //                选择民族
         driverManager.selectDriverNation(ExcelUtil.getCellAsString(59, colNum));
 //                选择婚姻状况
-        driverManager.selectDriverMaritalStatus(ExcelUtil.getCellAsString(60, colNum));
+    //    driverManager.selectDriverMaritalStatus(ExcelUtil.getCellAsString(60, colNum));
 //                选择外语能力
-        driverManager.selectDriverLanguageLevel(ExcelUtil.getCellAsString(61, colNum));
+  //      driverManager.selectDriverLanguageLevel(ExcelUtil.getCellAsString(61, colNum));
 //                选择学历
         driverManager.selectDriverEducation(ExcelUtil.getCellAsString(62, colNum));
 //                输入户口登记机关
@@ -1077,6 +1039,7 @@ public class OperationManagerPo {
         d.getMessage();
         Thread.sleep(8000);
         driverManager.clickBingding();
+        Thread.sleep(3000);
 
         //封号处理
         if (type.equals("出租车")) {
@@ -1093,6 +1056,9 @@ public class OperationManagerPo {
         if (type.equals("快车")) {
             Thread.sleep(2000);
             d.findElementClick("link","快车");
+            d.findElementSendKeys("name","conditions",fastDriverMobile);
+            d.findElementClick("xpath","//*[@id=\"expressDriver\"]/form/div[5]/a");
+            Thread.sleep(3000);
             driverManager.clickChangeStatus();
         }
         Thread.sleep(3000);
@@ -1124,8 +1090,64 @@ public class OperationManagerPo {
         }
 
 
+
     }
 
+    /**
+     *  司机信息中每个字段是否有值的校验
+     * @throws InterruptedException
+     */
+    public void  driverVerify(String carTypeName) throws InterruptedException {
+
+        //点击司机管理下的修改
+        Thread.sleep(2000);
+        if(carTypeName.equals("出租车"))
+        {
+            d.findElementClick("xpath","//*[@id=\"taxiDriver_table\"]/tbody/tr[1]/td[12]/a[2]");
+        }
+        if(carTypeName.equals("专车"))
+        {
+            d.findElementClick("xpath","//*[@id=\"specDriver_table\"]/tbody/tr[1]/td[12]/a[2]");
+        }
+        if(carTypeName.equals("快车"))
+        {
+            d.findElementClick("xpath","//*[@id=\"expressDriver_table\"]/tbody/tr[1]/td[12]/a[2]]");
+        }
+
+        Thread.sleep(2000);
+        //点击非必录项下拉
+        d.findElementClick("xpath","//*[@id=\"setMore\"]/div/li/a/i");
+        Thread.sleep(2000);
+        //判断文本框和下拉框的字段是否有值
+        //查看所有的input是否都有值
+        List<WebElement> list= driver.findElements(By.cssSelector("input[type='text']"));
+        for(int i=0;i<list.size();i++) {
+            if ( list.get(i).getAttribute("value").isEmpty()) {
+                if(list.get(i).getAttribute("name").contains("File"))
+                {
+                    continue;
+                }
+                else{
+                    Logger.Output(LogType.LogTypeName.ERROR,list.get(i).getAttribute("name") + "项数据丢失");
+
+                }
+            }
+        }
+        //查看所有下拉列表是否都有值
+        List<WebElement> li= driver.findElements(By.cssSelector("option"));
+        for(int j=0;j<li.size();j++)
+        {
+            if(li.get(j).isSelected()&&li.get(j).getText().contains("请选择"))
+            {
+                Logger.Output(LogType.LogTypeName.ERROR,li.get(j).getText() + "项数据丢失");
+            }
+        }
+        driver.navigate().back();
+        Thread.sleep(3000);
+
+
+
+    }
 
 
     @Test
@@ -1159,16 +1181,17 @@ public class OperationManagerPo {
                 addDriver("出租车");
                 //修改司机操作（新增非必录项）
                 updateDriver("出租车");
-                break;
-            default:
-                Thread.sleep(3000);
+                driverVerify("出租车");
+            case"其他":
                 d.findElementClick("link", "快车");
                 addDriver("快车");
                 updateDriver("快车");
+                driverVerify("快车");
                 Thread.sleep(3000);
-                d.findElementClick("link", "专车");
-                addDriver("专车");
-                updateDriver("专车");
+//                d.findElementClick("link", "专车");
+//                addDriver("专车");
+//                updateDriver("专车");
+//                driverVerify("专车");
                 break;
         }
     }
@@ -1186,21 +1209,18 @@ public class OperationManagerPo {
             case "约约":
                 d.findElementClick("link", "出租车");
                 addVehicle("出租车");
-//                test("出租车");
                 Thread.sleep(3000);
                 d.findElementClick("link", "快车");
                 addVehicle("快车");
-//                test("快车");
                 Thread.sleep(3000);
                 d.findElementClick("link", "专车");
                 addVehicle("专车");
-//                test("专车");
                 break;
             case "易行通":
                 d.findElementClick("link", "出租车");
                 addVehicle("出租车");
                 //新增完毕后所有字段的校验
-                test("出租车");
+                vehicleVerify("出租车");
                 break;
             default:
                 Thread.sleep(3000);

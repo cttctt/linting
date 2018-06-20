@@ -4,15 +4,15 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="219.372">
+           time="218.989">
   <properties />
   
   
-            <testcase name="addOneOffPayment" time="22.051" classname="com.summersoft.ctt.yycx.po.CouponMarketingPo" />
-                <testcase name="commandAdd" time="28.153" classname="com.summersoft.ctt.yycx.po.CouponMarketingPo" />
-                <testcase name="register" time="34.353" classname="com.summersoft.ctt.yycx.po.CouponMarketingPo" />
-                <testcase name="addCoupon" time="33.576" classname="com.summersoft.ctt.yycx.po.CouponMarketingPo" />
-                <testcase name="driverInvite" time="61.123" classname="com.summersoft.ctt.yycx.po.CouponMarketingPo" />
-                <testcase name="passengerInvite" time="40.116" classname="com.summersoft.ctt.yycx.po.CouponMarketingPo" />
+            <testcase name="register" time="33.470" classname="com.summersoft.ctt.yycx.po.CouponMarketingPo" />
+                <testcase name="driverInvite" time="61.890" classname="com.summersoft.ctt.yycx.po.CouponMarketingPo" />
+                <testcase name="addCoupon" time="33.943" classname="com.summersoft.ctt.yycx.po.CouponMarketingPo" />
+                <testcase name="addOneOffPayment" time="21.441" classname="com.summersoft.ctt.yycx.po.CouponMarketingPo" />
+                <testcase name="commandAdd" time="28.187" classname="com.summersoft.ctt.yycx.po.CouponMarketingPo" />
+                <testcase name="passengerInvite" time="40.058" classname="com.summersoft.ctt.yycx.po.CouponMarketingPo" />
       
 </testsuite>

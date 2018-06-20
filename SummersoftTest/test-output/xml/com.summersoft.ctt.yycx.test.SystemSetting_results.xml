@@ -4,13 +4,13 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="161.725">
+           time="267.614">
   <properties />
   
   
-            <testcase name="kuaicheSystemSet" time="35.280" classname="com.summersoft.ctt.yycx.test.SystemSetting" />
-                <testcase name="scopeOfBusiness" time="34.212" classname="com.summersoft.ctt.yycx.test.SystemSetting" />
-                <testcase name="zhuancheSystemSet" time="56.762" classname="com.summersoft.ctt.yycx.test.SystemSetting" />
-                <testcase name="chuzucheSystemSet" time="35.471" classname="com.summersoft.ctt.yycx.test.SystemSetting" />
+            <testcase name="kuaicheSystemSet" time="35.670" classname="com.summersoft.ctt.yycx.test.SystemSetting" />
+                <testcase name="zhuancheSystemSet" time="154.639" classname="com.summersoft.ctt.yycx.test.SystemSetting" />
+                <testcase name="scopeOfBusiness" time="34.513" classname="com.summersoft.ctt.yycx.test.SystemSetting" />
+                <testcase name="chuzucheSystemSet" time="42.792" classname="com.summersoft.ctt.yycx.test.SystemSetting" />
       
 </testsuite>

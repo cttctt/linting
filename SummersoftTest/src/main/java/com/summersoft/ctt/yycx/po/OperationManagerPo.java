@@ -555,7 +555,7 @@ public class OperationManagerPo {
 
         vehicle.selectDrivingLicenseDate(ExcelUtil.getCellAsDate(25, 4));
         Thread.sleep(3000);
-        ///  运输证号
+        // 运输证号
         vehicle.inputCertificate(ExcelUtil.getCellAsString(26, 4));
 //        发证机构
         vehicle.inputTransAgency(ExcelUtil.getCellAsString(27, 4));
@@ -618,7 +618,7 @@ public class OperationManagerPo {
 //        卫星定位装置IMEI号
         vehicle.inputGpsImei(ExcelUtil.getCellAsString(52, 4));
 //        选择安装日期
-        vehicle.selectInstallDate(ExcelUtil.getCellAsDate(53, 4));
+     vehicle.selectInstallDate(ExcelUtil.getCellAsDate(53, 4));
 //        车辆技术状况
         vehicle.inputVehicleTechnicalCondition(ExcelUtil.getCellAsString(54, 4));
 //        安全性能情况
@@ -1018,9 +1018,9 @@ public class OperationManagerPo {
 //                选择民族
         driverManager.selectDriverNation(ExcelUtil.getCellAsString(59, colNum));
 //                选择婚姻状况
-    //    driverManager.selectDriverMaritalStatus(ExcelUtil.getCellAsString(60, colNum));
+      driverManager.selectDriverMaritalStatus(ExcelUtil.getCellAsString(60, colNum));
 //                选择外语能力
-  //      driverManager.selectDriverLanguageLevel(ExcelUtil.getCellAsString(61, colNum));
+      driverManager.selectDriverLanguageLevel(ExcelUtil.getCellAsString(61, colNum));
 //                选择学历
         driverManager.selectDriverEducation(ExcelUtil.getCellAsString(62, colNum));
 //                输入户口登记机关
@@ -1028,7 +1028,7 @@ public class OperationManagerPo {
 //                输入户口住址
         driverManager.inputDriverAddress(ExcelUtil.getCellAsString(64, colNum));
 //                输入紧急联系人
-        driverManager.inputEmergencyContact(ExcelUtil.getCellAsString(65, colNum));
+       driverManager.inputEmergencyContact(ExcelUtil.getCellAsString(65, colNum));
 
 //                输入联系电话
         driverManager.inputEmergencyContactPhone(ExcelUtil.getCellAsString(66, colNum));
@@ -1055,14 +1055,9 @@ public class OperationManagerPo {
         }
         if (type.equals("快车")) {
             Thread.sleep(2000);
-            d.findElementClick("link","司机管理");
-            Thread.sleep(3000);
             d.findElementClick("link","快车");
-//            d.findElementSendKeys("name","conditions",fastDriverMobile);
-//            d.findElementClick("xpath","//*[@id=\"expressDriver\"]/form/div[5]/a");
-//            Thread.sleep(3000);
-            System.out.println("已经重新跑了一遍了");
-            driverManager.clickChangeStatus();
+            Thread.sleep(2000);
+          driverManager.clickChangeStatus();
         }
         Thread.sleep(3000);
         d.findElementSendKeys("name", "abortTime", "2019-02-09 20:00:00");
@@ -1145,10 +1140,6 @@ public class OperationManagerPo {
                 Logger.Output(LogType.LogTypeName.ERROR,li.get(j).getText() + "项数据丢失");
             }
         }
-        driver.navigate().back();
-        Thread.sleep(3000);
-
-
 
     }
 
@@ -1185,16 +1176,16 @@ public class OperationManagerPo {
                 //修改司机操作（新增非必录项）
                 updateDriver("出租车");
                 driverVerify("出租车");
+              break;
             case"其他":
                 d.findElementClick("link", "快车");
                 addDriver("快车");
+                //修改司机操作（新增非必录项）
                 updateDriver("快车");
-                driverVerify("快车");
                 Thread.sleep(3000);
-//                d.findElementClick("link", "专车");
-//                addDriver("专车");
-//                updateDriver("专车");
-//                driverVerify("专车");
+                d.findElementClick("link", "专车");
+                addDriver("专车");
+                updateDriver("专车");
                 break;
         }
     }
@@ -1245,7 +1236,6 @@ public class OperationManagerPo {
     }
     @AfterClass
     public void afterClass() {
-
-    // driver.quit();
+    driver.quit();
     }
 }

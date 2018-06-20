@@ -4,12 +4,12 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="123.518">
+           time="123.265">
   <properties />
   
   
-            <testcase name="passengerInfomation" time="48.955" classname="com.summersoft.ctt.yycx.test.PassengerServiceCenter" />
-                <testcase name="passengerInfomation" time="46.289" classname="com.summersoft.ctt.yycx.test.PassengerServiceCenter" />
-                <testcase name="passengerMessage" time="28.274" classname="com.summersoft.ctt.yycx.test.PassengerServiceCenter" />
+            <testcase name="passengerMessage" time="29.653" classname="com.summersoft.ctt.yycx.test.PassengerServiceCenter" />
+                <testcase name="passengerInfomation" time="45.387" classname="com.summersoft.ctt.yycx.test.PassengerServiceCenter" />
+                <testcase name="passengerInfomation" time="48.225" classname="com.summersoft.ctt.yycx.test.PassengerServiceCenter" />
       
 </testsuite>

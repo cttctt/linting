@@ -4,14 +4,14 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="105.390">
+           time="105.771">
   <properties />
   
   
-            <testcase name="articleAdd" time="34.080" classname="com.summersoft.ctt.yycx.test.InformationPublicCenter" />
-                <testcase name="feedbackSearch" time="18.818" classname="com.summersoft.ctt.yycx.test.InformationPublicCenter" />
-                <testcase name="articleUpdate" time="26.557" classname="com.summersoft.ctt.yycx.test.InformationPublicCenter" />
-                <testcase name="feedbackDeal" time="15.381" classname="com.summersoft.ctt.yycx.test.InformationPublicCenter" />
-                <testcase name="articleSearch" time="10.554" classname="com.summersoft.ctt.yycx.test.InformationPublicCenter" />
+            <testcase name="articleUpdate" time="26.929" classname="com.summersoft.ctt.yycx.test.InformationPublicCenter" />
+                <testcase name="feedbackSearch" time="18.919" classname="com.summersoft.ctt.yycx.test.InformationPublicCenter" />
+                <testcase name="articleSearch" time="10.864" classname="com.summersoft.ctt.yycx.test.InformationPublicCenter" />
+                <testcase name="feedbackDeal" time="14.635" classname="com.summersoft.ctt.yycx.test.InformationPublicCenter" />
+                <testcase name="articleAdd" time="34.424" classname="com.summersoft.ctt.yycx.test.InformationPublicCenter" />
       
 </testsuite>

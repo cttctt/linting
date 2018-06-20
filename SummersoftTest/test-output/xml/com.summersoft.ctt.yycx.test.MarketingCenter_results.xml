@@ -4,13 +4,13 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="217.207">
+           time="205.944">
   <properties />
   
   
-            <testcase name="couponTab" time="6.407" classname="com.summersoft.ctt.yycx.test.MarketingCenter" />
-                <testcase name="activity" time="169.831" classname="com.summersoft.ctt.yycx.test.MarketingCenter" />
-                <testcase name="couponTemplateAdd" time="30.921" classname="com.summersoft.ctt.yycx.test.MarketingCenter" />
-                <testcase name="passengerRecharge" time="10.048" classname="com.summersoft.ctt.yycx.test.MarketingCenter" />
+            <testcase name="couponTemplateAdd" time="26.000" classname="com.summersoft.ctt.yycx.test.MarketingCenter" />
+                <testcase name="couponTab" time="6.837" classname="com.summersoft.ctt.yycx.test.MarketingCenter" />
+                <testcase name="activity" time="164.258" classname="com.summersoft.ctt.yycx.test.MarketingCenter" />
+                <testcase name="passengerRecharge" time="8.849" classname="com.summersoft.ctt.yycx.test.MarketingCenter" />
       
 </testsuite>

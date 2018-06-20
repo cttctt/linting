@@ -12,7 +12,6 @@
     </listeners>
     <test verbose="3" preserve-order="true" name="chromeTest">
         <parameter name="browser" value="chrome"/>
-
         <classes>
             <class name="com.summersoft.ctt.yycx.po.LoginPo">
                 <methods>
@@ -47,7 +46,7 @@
 
             <class name="com.summersoft.ctt.yycx.po.OperationManagerPo">
            <methods>
-            <!--<include name="addPlatformInfo"></include>-->
+            <exclude name="addPlatformInfo"></exclude>
             <include name="regionalManager"></include>
             <include name="businessManager"></include>
             <include name="vehicleManager"></include>

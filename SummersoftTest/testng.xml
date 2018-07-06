@@ -30,12 +30,12 @@
             <!--<include name="zhuancheSystemSet"></include>-->
             <!--</methods>-->
             <!--</class>-->
-
+            <!--旧版的企业司机车辆新增-->
             <!--<class name="com.summersoft.ctt.yycx.test.OperationManage">-->
             <!--<parameter name="responsibleIdCard" value="350521199002076026" />-->
             <!--<parameter name="phone" value="15969181192" />-->
             <!--<methods>-->
-            <!--<include name="addPlatformInfo"></include>-->
+            <!--<exclude name="addPlatformInfo"></exclude>-->
             <!--<include name="regionalManager"></include>-->
             <!--<include name="businessManager"></include>-->
             <!--<include name="vehicleManager"></include>-->
@@ -84,7 +84,7 @@
             <!--<parameter name="title" value="test001"/>-->
             <!--<parameter name="linkUrl" value="www.baidu.com" />-->
             <!--&lt;!&ndash;乘客手机号信息&ndash;&gt;-->
-            <!--<parameter name="mobile" value="14200001234" />-->
+            <!--<parameter name="mobile" value="14216475006" />-->
             <!--<parameter name="searchStarDate" value="2017-01-01" />-->
             <!--<parameter name="remark" value="余额修改测试" />-->
             <!--<methods>-->
@@ -104,25 +104,25 @@
             <!--</class>-->
 
 
-            <!--<class name="com.summersoft.ctt.yycx.test.InformationPublicCenter">-->
-            <!--&lt;!&ndash;反馈信息手机号&ndash;&gt;-->
-            <!--<parameter name="phone" value="14284764851" />-->
-            <!--<methods>-->
-            <!--<include name="feedbackSearch"></include>-->
-            <!--<include name="feedbackDeal"></include>-->
-            <!--<include name="articleAdd"></include>-->
-            <!--<include name="articleSearch"></include>-->
-            <!--<include name="articleUpdate"></include>-->
-            <!--</methods>-->
+                      <!--<class name="com.summersoft.ctt.yycx.test.InformationPublicCenter">-->
+                <!--&lt;!&ndash;反馈信息手机号&ndash;&gt;-->
+                <!--<parameter name="phone" value="14284764851" />-->
+                <!--<methods>-->
+                    <!--<include name="feedbackSearch"></include>-->
+                    <!--<include name="feedbackDeal"></include>-->
+                    <!--<include name="articleAdd"></include>-->
+                    <!--<include name="articleSearch"></include>-->
+                    <!--<include name="articleUpdate"></include>-->
+                <!--</methods>-->
             <!--</class>-->
 
             <!--<class name="com.summersoft.ctt.yycx.test.FinancialCenter">-->
-            <!--<parameter name="mobile" value="14200000007" />-->
-            <!--<methods>-->
-            <!--<include name="statementOfAccount"></include>-->
-            <!--<include name="invoiceManage"></include>-->
-            <!--<include name="audit"></include>-->
-            <!--</methods>-->
+                <!--<parameter name="mobile" value="14200000007" />-->
+                <!--<methods>-->
+                    <!--<include name="statementOfAccount"></include>-->
+                    <!--<include name="invoiceManage"></include>-->
+                    <!--<include name="audit"></include>-->
+                <!--</methods>-->
             <!--</class>-->
 
 

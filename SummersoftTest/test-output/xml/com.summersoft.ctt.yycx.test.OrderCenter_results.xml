@@ -4,13 +4,13 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="53.873">
+           time="57.339">
   <properties />
   
   
-            <testcase name="passengerComplaint" time="14.339" classname="com.summersoft.ctt.yycx.test.OrderCenter" />
-                <testcase name="orderSearch" time="19.483" classname="com.summersoft.ctt.yycx.test.OrderCenter" />
-                <testcase name="driverComplaint" time="10.429" classname="com.summersoft.ctt.yycx.test.OrderCenter" />
-                <testcase name="warningMessage" time="9.622" classname="com.summersoft.ctt.yycx.test.OrderCenter" />
+            <testcase name="orderSearch" time="21.551" classname="com.summersoft.ctt.yycx.test.OrderCenter" />
+                <testcase name="warningMessage" time="11.351" classname="com.summersoft.ctt.yycx.test.OrderCenter" />
+                <testcase name="driverComplaint" time="10.548" classname="com.summersoft.ctt.yycx.test.OrderCenter" />
+                <testcase name="passengerComplaint" time="13.889" classname="com.summersoft.ctt.yycx.test.OrderCenter" />
       
 </testsuite>

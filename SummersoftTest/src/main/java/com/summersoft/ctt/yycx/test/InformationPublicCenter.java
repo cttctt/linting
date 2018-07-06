@@ -58,9 +58,7 @@ public class InformationPublicCenter {
 		d.findElementSendKeys("id", "mobile", phone);
 		Thread.sleep(3000);
 		d.findElementClick("xpath", "//*[@id=\"page-wrapper\"]/div/div[2]/div[1]/form/div[5]/a");
-
-		d.sleep();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		if (driver.getPageSource().contains(MyWebdriver.tableMessage)) {
 			Logger.Output(LogType.LogTypeName.WARNING, "未能查询到与" + phone + "相关的信息");
 
@@ -92,7 +90,7 @@ public class InformationPublicCenter {
 		status.selectByValue("1");
 		Thread.sleep(3000);
 		d.findElementClick("css", ".btn.btn-info.waves-effect.waves-light");
-		d.sleep();
+		Thread.sleep(3000);
 		if (driver.getPageSource().contains(MyWebdriver.tableMessage)) {
 			Logger.Output(LogType.LogTypeName.INFO, "司机投诉暂无未处理信息的订单");
 		} else {
@@ -100,10 +98,11 @@ public class InformationPublicCenter {
 			Thread.sleep(3000);
 			Select type = new Select(d.findElement("name", "status"));
 			type.selectByValue("2");
+			Thread.sleep(3000);
 			d.findElementSendKeys("id", "replyContent", "已处理完毕");
 			d.findElementClick("css", ".btn-determine");
 			Logger.Output(LogType.LogTypeName.INFO, "反馈信息" + d.findElement("class", "toast-message").getText());
-			d.sleep();
+			Thread.sleep(3000);
 
 
 		}
@@ -131,7 +130,6 @@ public class InformationPublicCenter {
 
 		WebElement iframe = d.findElement("id", "ueditor_0");
 		driver.switchTo().frame(iframe);
-
 		Thread.sleep(3000);
 		d.findElementSendKeys("xpath", "/html/body", content);
 		// 跳出iframe
@@ -158,6 +156,7 @@ public class InformationPublicCenter {
 				Logger.Output(LogType.LogTypeName.ERROR, "文章内容页查看失败");
 			}
 			driver.navigate().back();
+			Thread.sleep(3000);
 		} else {
 			Logger.Output(LogType.LogTypeName.ERROR, text + "文章新增失败");
 		}
@@ -242,8 +241,7 @@ public class InformationPublicCenter {
 
 	@AfterClass
 	public void afterClass() {
-
-	//	driver.quit();
+		driver.quit();
 	}
 
 }

@@ -36,6 +36,7 @@ public class OrderCenter {
 	public void orderSearch() throws InterruptedException {
 		Thread.sleep(3000);
 		d.findElementClick("link", "订单处理中心");
+        Thread.sleep(3000);
 		d.findElementClick("link", "专车订单");
 		searchDetail();
 		if(driver.getPageSource().contains(MyWebdriver.tableMessage))
@@ -68,7 +69,6 @@ public class OrderCenter {
 	public static void passengerComplaint() throws InterruptedException {
 		Thread.sleep(3000);
 		d.findElementClick("link", "订单处理中心");
-		d.setTimeOut();
 		Thread.sleep(3000);
 		d.findElementClick("link", "乘客投诉管理");
 		Thread.sleep(3000);
@@ -176,6 +176,7 @@ public class OrderCenter {
 	public void warningMessage() throws InterruptedException {
 		Thread.sleep(2000);
 		d.findElementClick("link", "报警信息管理");
+        Thread.sleep(2000);
 		Select status= new Select(d.findElement("id", "search_status"));
 		status.selectByValue("1");
 		Thread.sleep(3000);

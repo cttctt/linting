@@ -22,14 +22,7 @@ public class CouponMarketingPo extends LoginPo {
     public static WebDriver driver;
     public static MyWebdriver d;
 
-    @BeforeClass
-    @Parameters({"browser"})
-    public void beforeClass(String browser) throws IOException {
-        driver=MyWebdriver.before(browser,driver);
-        d = new MyWebdriver(driver);
-        d.openPage(MyWebdriver.baseURL);
 
-    }
 
     @Test
     /**
@@ -39,6 +32,7 @@ public class CouponMarketingPo extends LoginPo {
 
     {
         Thread.sleep(3000);
+        d.setTimeOut();
         d.findElementClick("link", "营销控制中心");
         Thread.sleep(3000);
         d.findElementClick("link", "优惠券营销");
@@ -220,10 +214,7 @@ public class CouponMarketingPo extends LoginPo {
      * @throws Exception
      */
     public void addCoupon() throws Exception {
-        Thread.sleep(3000);
-        d.findElementClick("link", "营销控制中心");
-        Thread.sleep(3000);
-        d.findElementClick("link", "优惠券营销");
+
         Thread.sleep(3000);
 
         // 点击我二维码微信链接
@@ -371,7 +362,15 @@ public class CouponMarketingPo extends LoginPo {
 
     }
 
+    @BeforeClass
+    @Parameters({"browser"})
+    public void beforeClass(String browser) throws IOException {
+        driver=MyWebdriver.before(browser,driver);
+        d = new MyWebdriver(driver);
+        d.openPage(MyWebdriver.baseURL);
 
+
+    }
 
     @AfterClass
     public void afterClass() {

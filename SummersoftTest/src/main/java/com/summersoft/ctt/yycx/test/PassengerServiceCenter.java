@@ -30,7 +30,7 @@ import com.summersoft.ctt.yycx.util.LogType.LogTypeName;
 public class PassengerServiceCenter {
 	public static WebDriver driver;
 	public static MyWebdriver d;
-	@Test(invocationCount=2)
+	@Test(invocationCount=1)
 /**
  * invocationCount=2,invocationTimeOut=10000分别表示执行次数，不能超过10秒,执行两次分别操作封号及解封两个动作
  * @param mobile
@@ -44,10 +44,14 @@ public class PassengerServiceCenter {
 	{
 
 		Thread.sleep(3000);
-		d.findElementClick("link", "乘客服务中心");
-		d.findElementClick("link", "乘客信息管理");
 		d.setTimeOut();
+
+		d.findElementClick("link", "乘客服务中心");
+        Thread.sleep(3000);
+		d.findElementClick("link", "乘客信息管理");
+        Thread.sleep(3000);
 		d.findElementClear("id", "start");
+        Thread.sleep(3000);
 		d.findElementSendKeys("id", "start", searchStartDate);
 		d.findElementSendKeys("id","passenger_mobile",mobile);
 		Thread.sleep(3000);
@@ -75,12 +79,13 @@ public class PassengerServiceCenter {
 
 		}
 
-
-
 		//修改乘客余额
 		Thread.sleep(3000);
 		d.findElementClick("link", "乘客信息管理");
+        Thread.sleep(3000);
+
 		d.findElementClear("id", "start");
+        Thread.sleep(3000);
 		d.findElementSendKeys("id", "start", searchStartDate);
 		d.findElementSendKeys("id","passenger_mobile",mobile);
 		Thread.sleep(3000);
@@ -105,7 +110,9 @@ public class PassengerServiceCenter {
 			//封号操作
 			Thread.sleep(3000);
 			d.findElementClick("link", "乘客信息管理");
+            Thread.sleep(3000);
 			d.findElementClear("id", "start");
+            Thread.sleep(3000);
 			d.findElementSendKeys("id", "start", searchStartDate);
 			d.findElementSendKeys("id","passenger_mobile",mobile);
 			Thread.sleep(2000);
@@ -132,6 +139,7 @@ public class PassengerServiceCenter {
 					Logger.Output(LogTypeName.ERROR,"长期封号操作失败");
 
 				}
+
 
 			}
 			else

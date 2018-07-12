@@ -20,6 +20,36 @@ public class VehicleManager {
     {
         plateNum.sendKeys(str);
     }
+   //输入营运证号
+    @FindBy(name="certificate")
+    private  WebElement certificateNo;
+    public void inputCertificateNo(String str)
+    {
+        certificateNo.sendKeys(str);
+    }
+    //上传营业证照
+    @FindBy(id="operationCertificateImgFile")
+    private  WebElement certifateImgFile;
+    public void uploadOperationCertificateImgFile(String str)
+    {
+        certifateImgFile.sendKeys(str);
+    }
+    //上传监督卡照片
+    @FindBy(id ="monitoringCardImgFile")
+    private  WebElement monitoringCardImgFile;
+    public void uploadMonitoringCardImgFile(String str)
+    {
+        monitoringCardImgFile.sendKeys(str);
+    }
+    //上传人车合影照片
+    @FindBy(id = "manCarImgFile")
+    private  WebElement manCarImgFile;
+    public void uploadManCarImgFile(String str)
+    {
+        manCarImgFile.sendKeys(str);
+    }
+
+
     // 车辆型号
     @FindBy(name="model")
     private  WebElement model;

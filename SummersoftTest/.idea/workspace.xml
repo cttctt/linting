@@ -33,64 +33,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="testng.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testng.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="47" column="20" lean-forward="true" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CouponMarketingPo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/po/CouponMarketingPo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="326" column="0" lean-forward="false" selection-start-line="326" selection-start-column="0" selection-end-line="326" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyWebdriver.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/MyWebdriver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="42" column="16" lean-forward="false" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OperationManagerPo.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OperationManagerPo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/po/OperationManagerPo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="55">
-              <caret line="490" column="16" lean-forward="false" selection-start-line="490" selection-start-column="16" selection-end-line="490" selection-end-column="16" />
+            <state relative-caret-position="337">
+              <caret line="536" column="33" lean-forward="false" selection-start-line="536" selection-start-column="33" selection-end-line="536" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InformationPublicCenter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/test/InformationPublicCenter.java">
+      <file leaf-file-name="MyWebdriver.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/MyWebdriver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="174" column="16" lean-forward="false" selection-start-line="174" selection-start-column="16" selection-end-line="174" selection-end-column="16" />
+            <state relative-caret-position="75">
+              <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20180712_140631.log" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/Log/20180712_140631.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="6" column="36" lean-forward="false" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DriverManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/page/DriverManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="43">
+              <caret line="551" column="0" lean-forward="false" selection-start-line="551" selection-start-column="0" selection-end-line="551" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#13959#13960#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OperationManage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/test/OperationManage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="192" column="16" lean-forward="false" selection-start-line="192" selection-start-column="16" selection-end-line="192" selection-end-column="16" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -109,36 +89,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>未选中</find>
-      <find>carType</find>
-      <find>bussinessType</find>
-      <find>a</find>
-      <find>taxiPlateNum</find>
-      <find>update</find>
-      <find>agent</find>
-      <find>车辆管理</find>
-      <find>车辆</find>
-      <find>企业管理</find>
-      <find>司机</find>
-      <find>agentUuid</find>
-      <find>driverManager</find>
-      <find>性别</find>
-      <find>司机管理</find>
-      <find>4</find>
-      <find>//*[@id=&quot;driverForm&quot;]/div[3]/input</find>
-      <find>乘客充值管理</find>
-      <find>radius</find>
-      <find>//*[@id=&quot;article_table&quot;]/tbody/tr[1]/td[3]</find>
-      <find>updateV</find>
-      <find>updateVehi</find>
-      <find>testt</find>
-      <find>车辆行驶里程</find>
-      <find>before</find>
-      <find>table</find>
-      <find>test</find>
       <find>vehicleM</find>
       <find>反馈</find>
       <find>长期封号</find>
+      <find>营运证</find>
+      <find>ehicleManager</find>
+      <find>vehicleManagerNew</find>
+      <find>before</find>
+      <find>beforeClass</find>
+      <find>update</find>
+      <find>代理</find>
+      <find>befor</find>
+      <find>updateT</find>
+      <find>driver</find>
+      <find>addDr</find>
+      <find>mobile</find>
+      <find>cer</find>
+      <find>certificateImageFile</find>
+      <find>addTaxiD</find>
+      <find>addTaxiDriver</find>
+      <find>厦门</find>
+      <find>千夏</find>
+      <find>vehicleManag</find>
+      <find>driverManagerNew</find>
+      <find>addDriver</find>
+      <find>DriverManager</find>
+      <find>taxiCard</find>
+      <find>fastCa</find>
+      <find>driverManagerNe</find>
+      <find>driverManagerN</find>
+      <find>updateDriverNew</find>
     </findStrings>
     <replaceStrings>
       <replace>serverURL</replace>
@@ -153,10 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/test/EE.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/test/OperationManageNew.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/page/SystemSetting.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/po/PlatformInformationPo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/po/LoginPo.java" />
         <option value="$PROJECT_DIR$/src/main/resources/config/config.properties" />
@@ -174,7 +150,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/ExcelUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/Logger.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/LogType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/RandomValue.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/ScreenShotOnFailure.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/TestListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/page/Invite.java" />
@@ -187,23 +162,28 @@
         <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/test/SystemSetting.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/test/testCase.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/test/TestJs.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/page/VehicleManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/page/DriverManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/po/OperationManagerPo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/po/OperationManagerPo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/test/InformationPublicCenter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/po/CouponMarketingPo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/po/CouponMarketingPo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/po/CouponMarketingPo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/test/OrderCenter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/test/PassengerServiceCenter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/po/OperationManagerPoNew.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/page/VehicleManager.java" />
+        <option value="$PROJECT_DIR$/testng.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/IDCard.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/IdCardGenerator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/Test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/RandomValue.java" />
+        <option value="$PROJECT_DIR$/testng.xml" />
+        <option value="$PROJECT_DIR$/testng.xml" />
+        <option value="$PROJECT_DIR$/testng.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/page/DriverManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/po/OperationManagerPo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/po/OperationManagerPo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/MyWebdriver.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/MyWebdriver.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/MyWebdriver.java" />
-        <option value="$PROJECT_DIR$/testng.xml" />
-        <option value="$PROJECT_DIR$/testng.xml" />
-        <option value="$PROJECT_DIR$/testng.xml" />
-        <option value="$PROJECT_DIR$/testng.xml" />
       </list>
     </option>
   </component>
@@ -237,10 +217,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="10" />
-    <option name="y" value="66" />
-    <option name="width" value="1608" />
-    <option name="height" value="514" />
+    <option name="x" value="507" />
+    <option name="y" value="13" />
+    <option name="width" value="1016" />
+    <option name="height" value="727" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -273,9 +253,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -316,24 +297,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="yycx" type="462c0819:PsiDirectoryNode" />
-              <item name="po" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SummersoftTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SummersoftTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="yycx" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SummersoftTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SummersoftTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="yycx" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -342,6 +305,22 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SummersoftTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SummersoftTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="excel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SummersoftTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SummersoftTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="Log" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SummersoftTest" type="b2602c69:ProjectViewProjectNode" />
@@ -357,7 +336,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -377,19 +355,20 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="summersofttest" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\SummersoftTest\src\main\resources\config" />
+      <recent name="E:\SummersoftTest\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.summersoft.ctt.yycx.po" />
+      <recent name="com.summersoft.ctt.yycx.test" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\20180424SummersoftTest\SummersoftTest\src\main\java\com\summersoft\ctt\yycx\test" />
       <recent name="E:\20180424SummersoftTest\SummersoftTest\src\main\java\com\summersoft\ctt\yycx\page" />
       <recent name="E:\SummersoftTest\src\main\resources\browser" />
       <recent name="E:\SummersoftTest\src\main\java\com\summersoft\ctt\yycx\test" />
       <recent name="E:\SummersoftTest\src\main\java\com\summersoft\ctt\yycx\util" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.summersoft.ctt.yycx.test" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\SummersoftTest\src\main\resources\config" />
-      <recent name="E:\SummersoftTest\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -411,6 +390,25 @@
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.summersoft.ctt.yycx.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.summersoft.ctt.yycx.util.Test" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="SummersoftTest" />
+      <envs />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -577,16 +575,18 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="TestNG.E:/SummersoftTest/testng.xml" />
       <item index="1" class="java.lang.String" itemvalue="TestNG.testCase" />
       <item index="2" class="java.lang.String" itemvalue="TestNG.OperationManagerPo.driverManager" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Test" />
     </list>
     <recent_temporary>
-      <list size="3">
+      <list size="4">
         <item index="0" class="java.lang.String" itemvalue="TestNG.E:/SummersoftTest/testng.xml" />
-        <item index="1" class="java.lang.String" itemvalue="TestNG.OperationManagerPo.driverManager" />
-        <item index="2" class="java.lang.String" itemvalue="TestNG.testCase" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Test" />
+        <item index="2" class="java.lang.String" itemvalue="TestNG.OperationManagerPo.driverManager" />
+        <item index="3" class="java.lang.String" itemvalue="TestNG.testCase" />
       </list>
     </recent_temporary>
   </component>
@@ -628,43 +628,49 @@
       <workItem from="1529466138524" duration="5477000" />
       <workItem from="1529562468827" duration="18069000" />
       <workItem from="1530585359202" duration="6236000" />
+      <workItem from="1530858778711" duration="16524000" />
+      <workItem from="1531106876936" duration="18822000" />
+      <workItem from="1531187225303" duration="9559000" />
+      <workItem from="1531277912554" duration="1691000" />
+      <workItem from="1531279846796" duration="10425000" />
+      <workItem from="1531297364058" duration="14484000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="E__SummersoftTest_testng_xml - 2018.07.03 at 13h 44m 20s.xml">
+    <history-entry file="E__SummersoftTest_testng_xml - 2018.07.12 at 11h 15m 17s.xml">
       <configuration name="E:/SummersoftTest/testng.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="E__SummersoftTest_testng_xml - 2018.07.03 at 13h 49m 04s.xml">
+    <history-entry file="E__SummersoftTest_testng_xml - 2018.07.12 at 11h 26m 14s.xml">
       <configuration name="E:/SummersoftTest/testng.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="E__SummersoftTest_testng_xml - 2018.07.03 at 13h 51m 17s.xml">
+    <history-entry file="E__SummersoftTest_testng_xml - 2018.07.12 at 11h 38m 59s.xml">
       <configuration name="E:/SummersoftTest/testng.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="E__SummersoftTest_testng_xml - 2018.07.03 at 13h 53m 53s.xml">
+    <history-entry file="E__SummersoftTest_testng_xml - 2018.07.12 at 11h 58m 22s.xml">
       <configuration name="E:/SummersoftTest/testng.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="E__SummersoftTest_testng_xml - 2018.07.03 at 14h 01m 00s.xml">
+    <history-entry file="E__SummersoftTest_testng_xml - 2018.07.12 at 13h 44m 42s.xml">
       <configuration name="E:/SummersoftTest/testng.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="E__SummersoftTest_testng_xml - 2018.07.03 at 14h 12m 06s.xml">
+    <history-entry file="E__SummersoftTest_testng_xml - 2018.07.12 at 13h 53m 21s.xml">
       <configuration name="E:/SummersoftTest/testng.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="E__SummersoftTest_testng_xml - 2018.07.03 at 14h 18m 10s.xml">
+    <history-entry file="E__SummersoftTest_testng_xml - 2018.07.12 at 13h 59m 29s.xml">
       <configuration name="E:/SummersoftTest/testng.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="E__SummersoftTest_testng_xml - 2018.07.03 at 14h 50m 01s.xml">
+    <history-entry file="E__SummersoftTest_testng_xml - 2018.07.12 at 14h 03m 51s.xml">
       <configuration name="E:/SummersoftTest/testng.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="E__SummersoftTest_testng_xml - 2018.07.03 at 14h 52m 38s.xml">
+    <history-entry file="E__SummersoftTest_testng_xml - 2018.07.12 at 14h 06m 08s.xml">
       <configuration name="E:/SummersoftTest/testng.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="E__SummersoftTest_testng_xml - 2018.07.03 at 14h 56m 04s.xml">
+    <history-entry file="E__SummersoftTest_testng_xml - 2018.07.12 at 14h 19m 57s.xml">
       <configuration name="E:/SummersoftTest/testng.xml" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="388115000" />
+    <option name="totallyTimeSpent" value="459620000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -677,6 +683,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282123" sideWeight="0.48898965" order="5" side_tool="false" content_ui="tabs" />
@@ -686,19 +693,19 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4567039" sideWeight="0.51554406" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32966322" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.68398875" sideWeight="0.6920181" order="10" side_tool="false" content_ui="tabs" x="0" y="319" width="1594" height="383" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272472" sideWeight="0.48445597" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25983146" sideWeight="0.6920181" order="10" side_tool="false" content_ui="tabs" x="0" y="319" width="1594" height="383" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5042135" sideWeight="0.48445597" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29987046" sideWeight="0.48380566" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26683939" sideWeight="0.48380566" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32966322" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.124246985" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51825845" sideWeight="0.84909326" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2823834" sideWeight="0.51724136" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51825845" sideWeight="0.84909326" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -707,36 +714,6 @@
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32966322" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4567039" sideWeight="0.51554406" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32966322" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32966322" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.124246985" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51825845" sideWeight="0.84909326" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282123" sideWeight="0.48898965" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48033708" sideWeight="0.6101036" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.497191" sideWeight="0.6920181" order="10" side_tool="false" content_ui="tabs" x="0" y="319" width="1594" height="383" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32966322" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272472" sideWeight="0.48445597" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29987046" sideWeight="0.48380566" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2823834" sideWeight="0.51724136" order="6" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -749,7 +726,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="6" />
+      <option name="time" value="7" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -758,69 +735,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/page/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/page/OneOffPayment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="106" column="5" lean-forward="true" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/test/TestAll.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="177" column="0" lean-forward="true" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/CookieUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/Logger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/LogType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/RandomValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/ScreenShotOnFailure.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="22" column="94" lean-forward="false" selection-start-line="22" selection-start-column="94" selection-end-line="22" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/TestListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Log/20180518_091952.log" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/Log/20180518_173443.log" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/Log/20180518_172849.log" />
@@ -855,13 +769,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/Log/20180530_140508.log" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/Log/20180530_141335.log" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/Log/20180604_175701.log" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-support/2.47.1/selenium-support-2.47.1.jar!/org/openqa/selenium/support/ui/Select.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/test/MarketingCenter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6500">
@@ -892,30 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="602">
           <caret line="135" column="0" lean-forward="false" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/page/VehicleManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2375">
-          <caret line="124" column="10" lean-forward="false" selection-start-line="124" selection-start-column="10" selection-end-line="124" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/page/DriverManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9425">
-          <caret line="544" column="5" lean-forward="false" selection-start-line="544" selection-start-column="5" selection-end-line="544" selection-end-column="5" />
-          <folding>
-            <element signature="e#309#310#0" expanded="false" />
-            <element signature="e#339#340#0" expanded="false" />
-            <element signature="e#449#450#0" expanded="false" />
-            <element signature="e#483#484#0" expanded="false" />
-            <element signature="e#13574#13575#0" expanded="false" />
-            <element signature="e#13611#13612#0" expanded="false" />
-            <element signature="e#13786#13787#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -961,14 +844,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/page/Invite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1025">
-          <caret line="54" column="31" lean-forward="false" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/test/OrderCenter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3925">
@@ -985,17 +860,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/MyWebdriver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="42" column="16" lean-forward="false" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/test/OperationManage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
+        <state relative-caret-position="4200">
           <caret line="192" column="16" lean-forward="false" selection-start-line="192" selection-start-column="16" selection-end-line="192" selection-end-column="16" />
           <folding />
         </state>
@@ -1003,34 +870,138 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/test/InformationPublicCenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
+        <state relative-caret-position="3725">
           <caret line="174" column="16" lean-forward="false" selection-start-line="174" selection-start-column="16" selection-end-line="174" selection-end-column="16" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/po/CouponMarketingPo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
+        <state relative-caret-position="7750">
           <caret line="326" column="0" lean-forward="false" selection-start-line="326" selection-start-column="0" selection-end-line="326" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/page/Invite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1025">
+          <caret line="54" column="31" lean-forward="false" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/page/OneOffPayment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2225">
+          <caret line="106" column="5" lean-forward="false" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/po/OperationManagerPoNew.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/IDCard.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="50" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/RandomValue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2725">
+          <caret line="112" column="5" lean-forward="false" selection-start-line="112" selection-start-column="5" selection-end-line="112" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-support/2.47.1/selenium-support-2.47.1.jar!/org/openqa/selenium/support/ui/Select.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2275">
+          <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/page/VehicleManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#338#339#0" expanded="false" />
+            <element signature="e#3517#3518#0" expanded="false" />
+            <element signature="e#3548#3549#0" expanded="false" />
+            <element signature="e#3845#3846#0" expanded="false" />
+            <element signature="e#3878#3879#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Log/20180711_135545.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Log/20180711_135436.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/IdCardGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="3594" column="9" lean-forward="false" selection-start-line="3594" selection-start-column="9" selection-end-line="3594" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testng.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="47" column="20" lean-forward="true" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
+        <state relative-caret-position="175">
+          <caret line="64" column="42" lean-forward="false" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/page/DriverManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="551" column="0" lean-forward="false" selection-start-line="551" selection-start-column="0" selection-end-line="551" selection-end-column="0" />
+          <folding>
+            <element signature="e#13959#13960#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Log/20180712_140631.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="36" lean-forward="false" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/po/OperationManagerPo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="490" column="16" lean-forward="false" selection-start-line="490" selection-start-column="16" selection-end-line="490" selection-end-column="16" />
+        <state relative-caret-position="337">
+          <caret line="536" column="33" lean-forward="false" selection-start-line="536" selection-start-column="33" selection-end-line="536" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/summersoft/ctt/yycx/util/MyWebdriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
           <folding />
         </state>
       </provider>

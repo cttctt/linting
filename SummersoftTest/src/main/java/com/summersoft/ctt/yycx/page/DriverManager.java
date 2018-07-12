@@ -8,7 +8,13 @@ public class DriverManager {
     //司機管理新增按钮
     @FindBy(linkText = "新增")
     private WebElement addBtn;
-
+//上传从业资格证
+    @FindBy(name = "certificateImageFile")
+    private  WebElement certiImg;
+    public void uploadCertiImg(String str)
+    {
+        certiImg.sendKeys(str);
+    }
 
     public  void clickAddBtn()
     {

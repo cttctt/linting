@@ -35,21 +35,24 @@ public class MyWebdriver {
     public static String ProjectURL = System.getProperty("user.dir") + "\\src\\main\\resources";
     public static String RANDOM = String.valueOf(new Date().getTime());
     //开通项目的类型（约约：区域类型开通三个出租车|专车|快车，易行通：出租车,其他：专车和快车）
-    public static String ProjectType = "易行通";
-//    //旧版时的业务类型
+    public static String ProjectType = "约约";
+  //旧版时的业务类型
+
 //   public static String bussinessType="出租车";
     //开通区域代理城市
     public static String city = "厦门市";
+    //约约外网测试地址
+  //  public static String baseURL = "http://testAdmin.yycx.qianxx.com/admin/login/9dd58b6d5f64a22d00c3f6264f8ce597.html";
     // 约约测试服后台地址
  //  public static String baseURL = "http://5000.gr165c6f.summersoft.ali-sh.goodrain.net:10080/admin/index.html";
    //约约数据统计新后台测试地址
- // public static String baseURL="http://192.168.1.199:8380/admin/login/9dd58b6d5f64a22d00c3f6264f8ce597.html";
+  public static String baseURL="http://192.168.1.199:8380/admin/login/9dd58b6d5f64a22d00c3f6264f8ce597.html";
     //轩轩测试服后台地址
     //  public static String baseURL="http://59.110.8.172:8380/admin/index.html";
     //国金测试服后台地址
     //public static String baseURL="https://admin.jishiyongche.com";
     //华威易行通后台地址
-   public static String baseURL="http://139.159.234.143:8380/admin/index.html";
+ // public static String baseURL="http://139.159.234.143:8380/admin/index.html";
     //美天后台测试地址
     //public static String baseURL="http://120.55.41.65:8380/admin/index.html";
     //万合测试后台地址
@@ -100,7 +103,6 @@ public class MyWebdriver {
         WebDriverWait wait=new WebDriverWait(driver,10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
-
 
     /**
      * 获取外部文件的值
@@ -1139,7 +1141,7 @@ public class MyWebdriver {
             }
             driver.manage().deleteAllCookies();
             Cookie ck1 = new Cookie("JSESSIONID", LoginPo.session);
-            driver.manage().timeouts().pageLoadTimeout(3, TimeUnit.SECONDS);
+            driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
             driver.manage().addCookie(ck1);
         }
 

@@ -30,6 +30,8 @@
             <!--<include name="zhuancheSystemSet"></include>-->
             <!--</methods>-->
             <!--</class>-->
+
+
             <!--旧版的企业司机车辆新增-->
             <!--<class name="com.summersoft.ctt.yycx.test.OperationManage">-->
             <!--<parameter name="responsibleIdCard" value="350521199002076026" />-->
@@ -43,16 +45,27 @@
             <!--<include name="driverMessage"></include>-->
             <!--</methods>-->
             <!--</class>-->
+           <!--第二次修改的版本-->
+            <!--<class name="com.summersoft.ctt.yycx.po.OperationManagerPo">-->
+           <!--<methods>-->
+            <!--<exclude name="addPlatformInfo"></exclude>-->
+            <!--<include name="regionalManager"></include>-->
+            <!--<include name="businessManager"></include>-->
+            <!--<include name="vehicleManager"></include>-->
+            <!--<include name="driverManager"></include>-->
+            <!--</methods>-->
+           <!--</class>-->
 
             <class name="com.summersoft.ctt.yycx.po.OperationManagerPo">
-           <methods>
-            <exclude name="addPlatformInfo"></exclude>
-            <include name="regionalManager"></include>
-            <include name="businessManager"></include>
-            <include name="vehicleManager"></include>
-            <include name="driverManager"></include>
-            </methods>
-           </class>
+                <methods>
+                    <exclude name="addPlatformInfo"></exclude>
+                    <include name="regionalManager"></include>
+                    <include name="businessManager"></include>
+                    <include name="vehicleManagerNew"></include>
+                    <include name="driverManagerNew"></include>
+                </methods>
+            </class>
+
 
 
             <!--<class name="com.summersoft.ctt.yycx.test.MarketingCenter">-->

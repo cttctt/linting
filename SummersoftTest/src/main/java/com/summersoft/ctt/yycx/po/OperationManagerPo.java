@@ -10,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.AssertJUnit;
 import org.testng.annotations.*;
+import org.testng.annotations.Test;
 import org.testng.asserts.Assertion;
 
 import java.io.IOException;
@@ -34,8 +35,526 @@ public class OperationManagerPo {
     private static String specDriverMobile = RandomValue.getTel();
     private static String fastDriverName = RandomValue.getChineseName();
     private static String fastDriverMobile = RandomValue.getTel();
+    //分别为不同车型的车添加不同ID
+    private static String taxiCard=RandomValue.getIDCard();
+    private static String specialCard=RandomValue.getIDCard();
+    private static String fastCard=RandomValue.getIDCard();
     public static WebDriver driver;
     public static MyWebdriver d;
+
+
+    /**
+     * 新版的出租车车辆新增（填写必录项）
+     *
+     * @param
+     * @throws Exception
+     */
+    private void addTaxi() throws Exception {
+        VehicleManager vehicle = PageFactory.initElements(driver, VehicleManager.class);
+        Thread.sleep(3000);
+        vehicle.clickAddBtn();
+        Thread.sleep(3000);
+        //输入车辆车牌号
+        vehicle.inputPlateNum(taxiPlateNum);
+        //上传行驶证正面
+        vehicle.uploadDrivingLicenseImgFile("D:\\picture\\car\\xingshizheng_1.jpg");
+        //上传行驶证反面
+        vehicle.uploadDrivingLicenseSubImgFile("D:\\picture\\car\\xingshizheng_2.jpg");
+        //输入营运证号
+        vehicle.inputCertificateNo("192837652341");
+        // 上传营运证照片
+        vehicle.uploadOperationCertificateImgFile("D:\\picture\\tt.jpg");
+        // 上传监督卡照片
+        vehicle.uploadMonitoringCardImgFile("D:\\picture\\tt.jpg");
+        // 上传人车合影照片
+        vehicle.uploadManCarImgFile("D:\\picture\\tt.jpg");
+        // 选择所属代理
+     vehicle.selectAgentUuid(agent);
+      //  vehicle.selectAgentUuid("厦门千夏测试");
+        Thread.sleep(3000);
+        //选择所属公司
+       vehicle.selectCompanyUuid(companyName);
+       // vehicle.selectCompanyUuid("千夏测试");
+        Thread.sleep(3000);
+        //选择所属业务
+        vehicle.selectcBusinessUuid("出租车");
+        Thread.sleep(3000);
+        //选择所属级别（所属车型）
+        vehicle.selectCarLevelUuid("出租车");
+        vehicle.clickSubmitBtn();
+        Thread.sleep(3000);
+        d.findElementClick("link", "出租车");
+        Thread.sleep(3000);
+        d.findElementSendKeys("name", "mix", taxiPlateNum);
+        Thread.sleep(3000);
+        vehicle.clickSearchBtn();
+        Thread.sleep(3000);
+        if (vehicle.getTaxiPlateNum().equals(taxiPlateNum)) {
+            Logger.Output(LogType.LogTypeName.INFO, "出租车新增成功,车牌号：" + taxiPlateNum);
+            Thread.sleep(3000);
+            // 车辆详情查看
+            d.findElementClick("xpath", "//*[@id=\"taxi_table\"]/tbody/tr[1]/td[6]/a[1]");
+            Thread.sleep(2000);
+            boolean flag = d.findElement("xpath", "//*[@id=\"page-wrapper\"]/div/div[2]/div[1]/div/h4").getText()
+                    .contains(taxiPlateNum);
+            if (flag) {
+                Logger.Output(LogType.LogTypeName.INFO, "出租车详情查看成功");
+                driver.navigate().back();
+                Thread.sleep(2000);
+                //车辆修改
+                vehicle.clickTaxiUpdateBtn();
+                Thread.sleep(3000);
+                updateTaxi();
+                vehicleVerify("出租车");
+
+            }
+
+        } else {
+            Logger.Output(LogType.LogTypeName.ERROR, "新增失败");
+        }
+
+    }
+
+
+    /**
+     * 新版修改出租车下车辆信息（即新增所有非必录项的信息录入）
+     *
+     * @throws Exception
+     */
+    private void updateTaxi() throws Exception {
+        VehicleManager vehicle = PageFactory.initElements(driver, VehicleManager.class);
+        ExcelUtil.setExcelFile(excelPath, "vehicle");
+
+        Thread.sleep(3000);
+        vehicle.clickDownBtn();
+        Thread.sleep(3000);
+        // 选择车牌颜色
+        vehicle.selectPlateColor(ExcelUtil.getCellAsString(16, 4));
+        //上传车辆照片
+        vehicle.uploadCarImgFile(ExcelUtil.getCellAsString(17, 4));
+        // 上传车牌照片
+        vehicle.uploadPlateImgFile(ExcelUtil.getCellAsString(18, 4));
+        //车辆型号
+        vehicle.inputModel("奔驰");
+        //车辆厂牌
+        vehicle.inputBrand("德国");
+        //车身颜色
+        vehicle.inputCarColor("白色");
+        // 核定载客位
+        vehicle.inputSeats("4");
+        //所属人
+        vehicle.inputOwnerName(ownerName);
+        // 所属人电话
+        vehicle.inputOwnerNameMobile(ownerNameMobile);
+        // 行驶证下的车辆类型
+        vehicle.inputVehicleType(ExcelUtil.getCellAsString(19, 4));
+        // 发动机号
+        vehicle.inputEngineId(ExcelUtil.getCellAsString(22, 4));
+        // 车辆VIN码
+        vehicle.inputVin(ExcelUtil.getCellAsString(23, 4));
+        // 选择车辆注册日期
+        vehicle.selectCertifyDateA(ExcelUtil.getCellAsDate(24, 4));
+        //  选择车辆发证日期
+        vehicle.selectDrivingLicenseDate(ExcelUtil.getCellAsDate(25, 4));
+        Thread.sleep(3000);
+        // 发证机构
+        vehicle.inputTransAgency(ExcelUtil.getCellAsString(27, 4));
+        // 经营区域
+        vehicle.inputTransArea(ExcelUtil.getCellAsString(28, 4));
+        // 选择有效日期起
+        vehicle.selectTransDateStart(ExcelUtil.getCellAsDate(29, 4));
+        // 选择有效日期止
+        vehicle.selectTransDateStop(ExcelUtil.getCellAsDate(30, 4));
+        //选择登记日期
+        vehicle.selectcertifyDateB(ExcelUtil.getCellAsDate(56, 4));
+        //选择报备日期
+        vehicle.selectRegisterDate(ExcelUtil.getCellAsDate(31, 4));
+        // 选择服务类型
+        vehicle.selectCommercialType(ExcelUtil.getCellAsString(32, 4));
+        //保险公司
+        vehicle.selectInsurCom(ExcelUtil.getCellAsString(33, 4));
+//        保险号
+        vehicle.inputInsurNum(ExcelUtil.getCellAsString(34, 4));
+//        保险类型
+        vehicle.inputInsurType(ExcelUtil.getCellAsString(35, 4));
+//        保险金额
+        vehicle.inputInsurCount(ExcelUtil.getCellAsString(36, 4));
+//        赔付额度
+        vehicle.inputInsurLimit(ExcelUtil.getCellAsString(37, 4));
+
+//        选择保险有效期起
+        vehicle.selectInsurEff(ExcelUtil.getCellAsDate(38, 4));
+
+//        选择保险有效期止
+        vehicle.selectInsurExp(ExcelUtil.getCellAsDate(39, 4));
+//        选择车辆燃料类型
+        vehicle.selectFuelType(ExcelUtil.getCellAsString(40, 4));
+
+//        发动机排量
+        vehicle.inputEngineDisplace(ExcelUtil.getCellAsString(41, 4));
+//        发动机功率
+        vehicle.inputEnginePower(ExcelUtil.getCellAsString(42, 4));
+//        车辆轴距
+        vehicle.inputWheelbase(ExcelUtil.getCellAsString(43, 4));
+        //车辆行驶里程
+        vehicle.inputVehicleKilometers(ExcelUtil.getCellAsNumber(56, 4));
+//        选择车辆检修状态
+        vehicle.selectFixState(ExcelUtil.getCellAsString(44, 4));
+//        选择下年检时间
+        vehicle.selectNextFixDate(ExcelUtil.getCellAsDate(45, 4));
+//        选择年度审验状态
+        vehicle.selectCheckState(ExcelUtil.getCellAsString(46, 4));
+//        选择年审时间
+        vehicle.selectCheckDate(ExcelUtil.getCellAsDate(47, 4));
+//        选择下次年审时间
+        vehicle.selectNextCheckDate(ExcelUtil.getCellAsDate(48, 4));
+//        发票打印序列号
+        vehicle.inputFeePrintId(ExcelUtil.getCellAsString(49, 4));
+//        卫星定位装置品牌
+        vehicle.inputGpsBrand(ExcelUtil.getCellAsString(50, 4));
+//        卫星定位装置型号
+        vehicle.inputGpsModel(ExcelUtil.getCellAsString(51, 4));
+//        卫星定位装置IMEI号
+        vehicle.inputGpsImei(ExcelUtil.getCellAsString(52, 4));
+//        选择安装日期
+        vehicle.selectInstallDate(ExcelUtil.getCellAsDate(53, 4));
+//        车辆技术状况
+        vehicle.inputVehicleTechnicalCondition(ExcelUtil.getCellAsString(54, 4));
+//        安全性能情况
+        vehicle.inputSafetyPerformance(ExcelUtil.getCellAsString(55, 4));
+        Thread.sleep(3000);
+        vehicle.clickSubmitBtn();
+        d.getMessage();
+        Thread.sleep(3000);
+
+
+    }
+
+    /**
+     * 新版车辆管理
+     *
+     * @throws Exception
+     */
+    @Test
+    public void vehicleManagerNew() throws Exception {
+//        Thread.sleep(3000);
+//        d.findElementClick("link", "车辆管理");
+//        Thread.sleep(3000);
+//        addTaxi();
+
+
+        Thread.sleep(3000);
+        d.findElementClick("link", "车辆管理");
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        //ProjectTyp:约约（执行快车专车出租车）：易行通（出租车）；其他（快车、专车）
+        String projectType = MyWebdriver.ProjectType;
+        //开通出租车、专车、快车业务
+        switch (projectType) {
+            case "约约":
+                d.findElementClick("link", "出租车");
+                 addTaxi();
+                Thread.sleep(3000);
+                d.findElementClick("link", "快车");
+                addVehicle("快车");
+                Thread.sleep(3000);
+                d.findElementClick("link", "专车");
+                addVehicle("专车");
+                break;
+            case "易行通":
+                d.findElementClick("link", "出租车");
+                addTaxi();
+                break;
+            default:
+                Thread.sleep(3000);
+                d.findElementClick("link", "快车");
+                addVehicle("快车");
+                Thread.sleep(3000);
+                d.findElementClick("link", "专车");
+                addVehicle("专车");
+                break;
+        }
+
+
+    }
+    /**
+     * 新版出租车司机（添加必录项）
+     */
+    private void addTaxiDriver(String carTypeName) throws Exception {
+        DriverManager driverManager = PageFactory.initElements(driver, DriverManager.class);
+        ExcelUtil.setExcelFile(excelPath, "driver");
+        Thread.sleep(5000);
+        int colNum = 4;
+        driverManager.clickAddBtn();
+        //姓名
+        driverManager.inputName(taxiDriverName);
+        //身份证
+        driverManager.inputIdCard(taxiCard);
+        //联系电话
+        driverManager.inputMobile(taxiDriverMobile);
+        //头像
+        driverManager.uploadFaceFile("D:\\picture\\tt.jpg");
+//        上传身份证正面
+        driverManager.uploadIdCard(ExcelUtil.getCellAsString(19, colNum));
+//        上传身份证背面
+        driverManager.uploadIdCardBack(ExcelUtil.getCellAsString(20, colNum));
+        //        选择初次领证日期
+        driverManager.selectDriverLicenseDate(ExcelUtil.getCellAsDate(28, colNum));
+//        上传驾驶证正面
+        driverManager.uploadDrivingLicenceHomeImgFile(ExcelUtil.getCellAsString(24, colNum));
+//        上传驾驶证反面
+        driverManager.uploadDrivingLicenceSubImgFile(ExcelUtil.getCellAsString(25, colNum));
+        //        输入网络资格证号
+        driverManager.inputCertificateNo(ExcelUtil.getCellAsString(33, colNum));
+//       从业资质期止
+        driverManager.selectNetworkCarProofOff(ExcelUtil.getCellAsDate(38, colNum));
+        //从业资格证照片
+        driverManager.uploadCertiImg("D:\\picture\\tt.jpg");
+      driverManager.selectAgent(agent);
+       // driverManager.selectAgent("厦门千夏测试");
+        Thread.sleep(2000);
+          driverManager.selectCompany(companyName);
+       // driverManager.selectCompany("千夏测试");
+        Thread.sleep(2000);
+        driverManager.selectCity(cityName);
+       // driverManager.selectCity("厦门市");
+        Thread.sleep(3000);
+        driverManager.selectBusiness(carTypeName);
+        Thread.sleep(3000);
+        driverManager.clickSubmitBtn();
+        Thread.sleep(5000);
+        driverManager.clickBingding();
+        Thread.sleep(3000);
+        driverManager.inputPlateNum(taxiPlateNum);
+        driverManager.clickCarInfoBtn();
+        Thread.sleep(3000);
+        //点击绑定
+        driverManager.clickSubmitBtn();
+        d.getMessage();
+
+    }
+    /**
+     * 新版出租车司机修改（添加非必录项）
+     */
+    private void updateTaxiDriver() throws Exception {
+        DriverManager driverManager = PageFactory.initElements(driver, DriverManager.class);
+        ExcelUtil.setExcelFile(excelPath, "driver");
+        Thread.sleep(3000);
+        int colNum = 4;
+        Thread.sleep(2000);
+        driverManager.clickTaxiUpdateBtn();
+        Thread.sleep(3000);
+        driverManager.clickDownBtn();
+        // 选择性别
+        driverManager.selectSex(ExcelUtil.getCellAsString(17, colNum));
+//        输入联系地址
+        driverManager.inputDriverContactAddress(ExcelUtil.getCellAsString(18, colNum));
+//        上传手持身份证
+        driverManager.uploadIdCardImg(ExcelUtil.getCellAsString(21, colNum));
+//        输入分组信息
+        driverManager.inputDriverNo(ExcelUtil.getCellAsNumber(22, colNum));
+//        选择准驾车型
+        driverManager.selectDriverType(ExcelUtil.getCellAsString(27, colNum));
+//        选择驾驶证有效期起
+        driverManager.selectDriverLicenseOn(ExcelUtil.getCellAsDate(29, colNum));
+//        选择驾驶证有效期止
+        driverManager.selectDriverLicenseOff(ExcelUtil.getCellAsDate(30, colNum));
+//        输入交通违章次数
+        driverManager.inputTrafficViolationsCount(ExcelUtil.getCellAsNumber(31, colNum));
+//        输入交通事故次数
+        driverManager.inputTrafficAccidentCount(ExcelUtil.getCellAsNumber(32, colNum));
+
+//        输入发证机构
+        driverManager.inputNetworkCarIssueOrganization(ExcelUtil.getCellAsString(34, colNum));
+//        选择发证日期
+        driverManager.selectNetworkCarIssueDate(ExcelUtil.getCellAsDate(35, colNum));
+//        选择初次领证日期
+        driverManager.selectNetworkCarProofDate(ExcelUtil.getCellAsDate(36, colNum));
+//        选择有效期起
+        driverManager.selectNetworkCarProofOn(ExcelUtil.getCellAsDate(37, colNum));
+
+//        选择报备日期
+        driverManager.selectRegisterDate(ExcelUtil.getCellAsDate(39, colNum));
+//        选择服务类型
+        driverManager.selectCommercialType(ExcelUtil.getCellAsString(40, colNum));
+//        输入签署公司
+        driverManager.inputContractCompany(ExcelUtil.getCellAsString(41, colNum));
+//        选择合同签订日期
+        driverManager.selectContractSign(ExcelUtil.getCellAsDate(42, colNum));
+//        选择合同有效期起
+        driverManager.selectContractOn(ExcelUtil.getCellAsDate(43, colNum));
+//        选择合同有效期止
+        driverManager.selectContractOff(ExcelUtil.getCellAsDate(44, colNum));
+//        上传合同扫描
+        driverManager.uploadContractPhotoPDFFile(ExcelUtil.getCellAsString(45, colNum));
+//        选择合同类型
+        driverManager.selectContractType(ExcelUtil.getCellAsString(46, colNum));
+//       选择培训类型
+        driverManager.selectType(ExcelUtil.getCellAsString(47, colNum));
+//        输入培训课程名称
+        driverManager.inputCourseName(ExcelUtil.getCellAsString(48, colNum));
+//        选择培训课程日期
+        driverManager.selectCourseDate(ExcelUtil.getCellAsDate(49, colNum));
+//                选择培训开始时间
+        driverManager.selectStartTime(ExcelUtil.getCellAsDate(50, colNum));
+//                选择培训结束时间
+        driverManager.selectStopTime(ExcelUtil.getCellAsDate(51, colNum));
+//                输入培训时长
+        driverManager.inputDuration(ExcelUtil.getCellAsNumber(52, colNum));
+//                输入户名
+        driverManager.inputBankAccountName(ExcelUtil.getCellAsString(53, colNum));
+//                输入账号
+        driverManager.inputBankAccount(ExcelUtil.getCellAsString(54, colNum));
+//                输入银行
+        driverManager.inputBankName(ExcelUtil.getCellAsString(55, colNum));
+//                输入银行地址
+        driverManager.inputBankAddress(ExcelUtil.getCellAsString(56, colNum));
+//                上传银行照片
+        driverManager.uploadBankPhotoFile(ExcelUtil.getCellAsString(57, colNum));
+//                上传体检报告
+        driverManager.uploadExaminateReportPDFFile(ExcelUtil.getCellAsString(58, colNum));
+//                选择民族
+        driverManager.selectDriverNation(ExcelUtil.getCellAsString(59, colNum));
+//                选择婚姻状况
+        driverManager.selectDriverMaritalStatus(ExcelUtil.getCellAsString(60, colNum));
+//                选择外语能力
+        driverManager.selectDriverLanguageLevel(ExcelUtil.getCellAsString(61, colNum));
+//                选择学历
+        driverManager.selectDriverEducation(ExcelUtil.getCellAsString(62, colNum));
+//                输入户口登记机关
+        driverManager.inputDriverCensus(ExcelUtil.getCellAsString(63, colNum));
+//                输入户口住址
+        driverManager.inputDriverAddress(ExcelUtil.getCellAsString(64, colNum));
+//                输入紧急联系人
+        driverManager.inputEmergencyContact(ExcelUtil.getCellAsString(65, colNum));
+
+//                输入联系电话
+        driverManager.inputEmergencyContactPhone(ExcelUtil.getCellAsString(66, colNum));
+//                输入地址
+        driverManager.inputEmergencyContactAddress(ExcelUtil.getCellAsString(67, colNum));
+        // Thread.sleep(3000);
+        //点击保存
+        driverManager.clickSubmitBtn();
+        d.getMessage();
+        Thread.sleep(8000);
+        //点击返回首页
+        driverManager.clickBingding();
+        Thread.sleep(3000);
+        changeStatus("出租车");
+
+    }
+
+    /**
+     * 封号解封操作
+     */
+    private  void changeStatus(String type) throws InterruptedException {
+        DriverManager driverManager = PageFactory.initElements(driver, DriverManager.class);
+        //封号处理
+        if (type.equals("出租车")) {
+            Thread.sleep(2000);
+            d.findElementClick("link", "出租车");
+            driverManager.clickChangeStatus();
+        }
+        if (type.equals("专车")) {
+            Thread.sleep(2000);
+            d.findElementClick("link", "专车");
+            driverManager.clickChangeStatus();
+
+        }
+        if (type.equals("快车")) {
+            Thread.sleep(2000);
+            d.findElementClick("link", "快车");
+            driverManager.clickChangeStatus();
+
+        }
+        Thread.sleep(3000);
+        d.findElementSendKeys("name", "abortTime", "2019-02-09 20:00:00");
+        Thread.sleep(3000);
+        d.findElementSendKeys("name", "abortRemark", "短期封号的封号测试备注");
+        d.setTimeOut();
+        d.findElementClick("css", ".btn-determine");
+        Thread.sleep(3000);
+        String status = d.findElement("xpath", "//*[@id=\"changeStatus\"]").getText();
+        if (status.equals("解封")) {
+            Logger.Output(LogType.LogTypeName.INFO, "短期封号操作成功");
+        } else {
+            Logger.Output(LogType.LogTypeName.ERROR, "短期封号操作失败");
+
+        }
+        // 执行解封操作
+        d.findElementClick("xpath", "//*[@id=\"changeStatus\"]");
+        d.setTimeOut();
+        d.findElementClick("css", ".btn-determine");
+        Thread.sleep(3000);
+        String status1 = d.findElement("xpath", "//*[@id=\"changeStatus\"]").getText();
+        if (status1.equals("封号")) {
+            Logger.Output(LogType.LogTypeName.INFO, "解封操作成功");
+
+        } else {
+            Logger.Output(LogType.LogTypeName.ERROR, "解封操作失败");
+
+        }
+
+    }
+
+
+    /**
+     * 新版司机管理
+     *
+     * @throws Exception
+     */
+    @Test
+    public void driverManagerNew() throws Exception {
+
+        Thread.sleep(3000);
+        d.findElementClick("link", "营运管理中心");
+        Thread.sleep(3000);
+        d.findElementClick("link", "司机管理");
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        //ProjectTyp:约约（执行快车专车出租车）：易行通（出租车）；其他（快车、专车）
+        String projectType = MyWebdriver.ProjectType;
+        //开通出租车、专车、快车业务下的司機
+        switch (projectType) {
+            case "约约":
+                d.findElementClick("link", "出租车");
+                //出租车司机新增
+                addTaxiDriver("出租车");
+                //出租车司机修改
+                updateTaxiDriver();
+                d.findElementClick("link", "快车");
+                addDriverNew("快车");
+                updateDriverNew("快车");
+                Thread.sleep(3000);
+                d.findElementClick("link", "专车");
+                addDriverNew("专车");
+                updateDriverNew("专车");
+                break;
+            case "易行通":
+                d.findElementClick("link", "出租车");
+                //出租车司机新增
+                addTaxiDriver("出租车");
+                //出租车司机修改
+                updateTaxiDriver();
+                driverVerify("出租车");
+                break;
+            case "其他":
+                d.findElementClick("link", "快车");
+                addDriverNew("快车");
+                updateDriverNew("快车");
+                Thread.sleep(3000);
+                d.findElementClick("link", "专车");
+                addDriverNew("专车");
+                updateDriverNew("专车");
+                break;
+        }
+
+
+
+
+
+
+
+    }
+
 
     //此类功能：新增业务编辑城市|抽成，关闭业务等操作
     private void addBussinessType() throws Exception {
@@ -294,9 +813,10 @@ public class OperationManagerPo {
     @BeforeClass
     @Parameters({"browser"})
     public void beforeClass(String browser) throws IOException {
-        driver=MyWebdriver.before(browser,driver);
+        driver = MyWebdriver.before(browser, driver);
         d = new MyWebdriver(driver);
         d.openPage(MyWebdriver.baseURL);
+
 
     }
 
@@ -429,9 +949,9 @@ public class OperationManagerPo {
         platform.clickEditBtn(4);
         Thread.sleep(3000);
         platform.inputCertificate(randomValue);
-        platform.inputOperationArea(ExcelUtil.getCellAsString(35,4));
-        platform.inputOwnerName(ExcelUtil.getCellAsString(36,4));
-        platform.inputOrganization(ExcelUtil.getCellAsString(37,4));
+        platform.inputOperationArea(ExcelUtil.getCellAsString(35, 4));
+        platform.inputOwnerName(ExcelUtil.getCellAsString(36, 4));
+        platform.inputOrganization(ExcelUtil.getCellAsString(37, 4));
         platform.clickSaveBtn(4);
         Thread.sleep(3000);
         d.findElementClick("link", "经营许可信息");
@@ -445,7 +965,6 @@ public class OperationManagerPo {
         d.findElementClick("link", "营运管理中心");
 
     }
-
 
 
     //区域代理管理
@@ -524,6 +1043,7 @@ public class OperationManagerPo {
         }
     }
 
+
     //修改车辆的信息（新增所有非必录项的信息录入）
     private void updateVehicle() throws Exception {
         VehicleManager vehicle = PageFactory.initElements(driver, VehicleManager.class);
@@ -554,7 +1074,6 @@ public class OperationManagerPo {
         //  选择车辆发证日期
 
         vehicle.selectDrivingLicenseDate(ExcelUtil.getCellAsDate(25, 4));
-        Thread.sleep(3000);
         // 运输证号
         vehicle.inputCertificate(ExcelUtil.getCellAsString(26, 4));
 //        发证机构
@@ -589,16 +1108,16 @@ public class OperationManagerPo {
 //        选择保险有效期止
         vehicle.selectInsurExp(ExcelUtil.getCellAsDate(39, 4));
 //        选择车辆燃料类型
-     vehicle.selectFuelType(ExcelUtil.getCellAsString(40, 4));
+        vehicle.selectFuelType(ExcelUtil.getCellAsString(40, 4));
 
 //        发动机排量
         vehicle.inputEngineDisplace(ExcelUtil.getCellAsString(41, 4));
 //        发动机功率
         vehicle.inputEnginePower(ExcelUtil.getCellAsString(42, 4));
 //        车辆轴距
-       vehicle.inputWheelbase(ExcelUtil.getCellAsString(43, 4));
+        vehicle.inputWheelbase(ExcelUtil.getCellAsString(43, 4));
         //车辆行驶里程
-      vehicle.inputVehicleKilometers(ExcelUtil.getCellAsNumber(56,4));
+        vehicle.inputVehicleKilometers(ExcelUtil.getCellAsNumber(56, 4));
 //        选择车辆检修状态
         vehicle.selectFixState(ExcelUtil.getCellAsString(44, 4));
 //        选择下年检时间
@@ -618,7 +1137,7 @@ public class OperationManagerPo {
 //        卫星定位装置IMEI号
         vehicle.inputGpsImei(ExcelUtil.getCellAsString(52, 4));
 //        选择安装日期
-     vehicle.selectInstallDate(ExcelUtil.getCellAsDate(53, 4));
+        vehicle.selectInstallDate(ExcelUtil.getCellAsDate(53, 4));
 //        车辆技术状况
         vehicle.inputVehicleTechnicalCondition(ExcelUtil.getCellAsString(54, 4));
 //        安全性能情况
@@ -652,7 +1171,7 @@ public class OperationManagerPo {
             vehicle.inputOwnerName(ownerName);
             vehicle.inputOwnerNameMobile(ownerNameMobile);
             Thread.sleep(3000);
-           vehicle.clickSubmitBtn();
+            vehicle.clickSubmitBtn();
             d.getMessage();
             Thread.sleep(3000);
             d.findElementClick("link", "出租车");
@@ -802,50 +1321,223 @@ public class OperationManagerPo {
 
 
     //检验车辆信息是否都有值
-    public void vehicleVerify(String carTypeName)throws Exception
-    {
-        if(carTypeName.equals("出租车"))
-        {
+    public void vehicleVerify(String carTypeName) throws Exception {
+        Thread.sleep(3000);
+        if (carTypeName.equals("出租车")) {
 
-            d.findElementClick("xpath","//*[@id=\"taxi_table\"]/tbody/tr[1]/td[6]/a[2]");
+            d.findElementClick("xpath", "//*[@id=\"taxi_table\"]/tbody/tr[1]/td[6]/a[2]");
         }
-        if(carTypeName.equals("专车"))
-        {
-            d.findElementClick("xpath","//*[@id=\"spec_table\"]/tbody/tr[1]/td[9]/a[2]");
+        if (carTypeName.equals("专车")) {
+            d.findElementClick("xpath", "//*[@id=\"spec_table\"]/tbody/tr[1]/td[9]/a[2]");
         }
-        if(carTypeName.equals("快车"))
-        {
-            d.findElementClick("xpath","//*[@id=\"express_table\"]/tbody/tr[1]/td[8]/a[2]");
+        if (carTypeName.equals("快车")) {
+            d.findElementClick("xpath", "//*[@id=\"express_table\"]/tbody/tr[1]/td[8]/a[2]");
         }
         Thread.sleep(3000);
-        d.findElementClick("xpath","//*[@id=\"setMore\"]/div/li/i");
+        d.findElementClick("xpath", "//*[@id=\"setMore\"]/div/li/i");
         //查看所有的input是否都有值
-        List<WebElement> list= driver.findElements(By.cssSelector("input[type='text']"));
-        for(int i=0;i<list.size();i++) {
-            if ( list.get(i).getAttribute("value").isEmpty()) {
-                if(list.get(i).getAttribute("name").contains("File"))
-                {
+        List<WebElement> list = driver.findElements(By.cssSelector("input[type='text']"));
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getAttribute("value").isEmpty()) {
+                if (list.get(i).getAttribute("name").contains("File")) {
                     continue;
-                }
-                else{
-                    Logger.Output(LogType.LogTypeName.ERROR,list.get(i).getAttribute("name") + "项数据丢失");
+                } else {
+                    Logger.Output(LogType.LogTypeName.ERROR, list.get(i).getAttribute("name") + "项数据丢失");
 
                 }
             }
         }
         //查看所有下拉列表是否都有值
-        List<WebElement> li= driver.findElements(By.cssSelector("option"));
-        for(int j=0;j<li.size();j++)
-        {
-            if(li.get(j).isSelected()&&li.get(j).getText().contains("请选择"))
-            {
-                    Logger.Output(LogType.LogTypeName.ERROR,li.get(j).getText() + "项数据丢失");
+        List<WebElement> li = driver.findElements(By.cssSelector("option"));
+        for (int j = 0; j < li.size(); j++) {
+            if (li.get(j).isSelected() && li.get(j).getText().contains("请选择")) {
+                Logger.Output(LogType.LogTypeName.ERROR, li.get(j).getText() + "项数据丢失");
             }
         }
         driver.navigate().back();
         Thread.sleep(3000);
 
     }
+
+
+    /**
+     * 新版快车专车司机添加（添加所有的必录项）
+     * @throws Exception
+     */
+    private void addDriverNew(String carTypeName) throws Exception {
+        DriverManager driverManager = PageFactory.initElements(driver, DriverManager.class);
+        ExcelUtil.setExcelFile(excelPath, "driver");
+        int colNum=4;
+        Thread.sleep(5000);
+        driverManager.clickAddBtn();
+        Thread.sleep(3000);
+        if (carTypeName.equals("快车")) {
+            driverManager.inputName(fastDriverName);
+            driverManager.inputIdCard(fastCard);
+            driverManager.inputMobile(fastDriverMobile);
+        }
+        if (carTypeName.equals("专车")) {
+            driverManager.inputName(specDriverName);
+            driverManager.inputIdCard(specialCard);
+            driverManager.inputMobile(specDriverMobile);
+        }
+        //        上传身份证正面
+        driverManager.uploadIdCard(ExcelUtil.getCellAsString(19, colNum));
+//        上传身份证背面
+        driverManager.uploadIdCardBack(ExcelUtil.getCellAsString(20, colNum));
+//        上传手持身份证
+        driverManager.uploadIdCardImg(ExcelUtil.getCellAsString(21, colNum));
+        //        上传驾驶证正面
+        driverManager.uploadDrivingLicenceHomeImgFile(ExcelUtil.getCellAsString(24, colNum));
+//        上传驾驶证反面
+        driverManager.uploadDrivingLicenceSubImgFile(ExcelUtil.getCellAsString(25, colNum));
+        driverManager.selectAgent(agent);
+        Thread.sleep(2000);
+        driverManager.selectCompany(companyName);
+        Thread.sleep(2000);
+        driverManager.selectCity(cityName);
+        Thread.sleep(3000);
+        driverManager.selectBusiness(carTypeName);
+        Thread.sleep(3000);
+        driverManager.clickSubmitBtn();
+        Thread.sleep(5000);
+        driverManager.clickBingding();
+        Thread.sleep(3000);
+        if (carTypeName.equals("快车")) {
+            driverManager.inputPlateNum(fastPlateNum);
+
+        }
+        if (carTypeName.equals("专车")) {
+            driverManager.inputPlateNum(specPlateNum);
+
+        }
+        driverManager.clickCarInfoBtn();
+        Thread.sleep(3000);
+        //点击绑定
+        driverManager.clickSubmitBtn();
+        d.getMessage();
+
+
+    }
+    /**
+     * 新版快车专车司机修改（添加非必录项）
+     * @throws Exception
+     */
+    private void updateDriverNew(String type) throws Exception {
+        DriverManager driverManager = PageFactory.initElements(driver, DriverManager.class);
+        ExcelUtil.setExcelFile(excelPath, "driver");
+        Thread.sleep(3000);
+        int colNum = 4;
+        if (type.equals("快车")) {
+            Thread.sleep(2000);
+            driverManager.clickFastdateBtn();
+            Thread.sleep(3000);
+            driverManager.clickDownBtn();
+        }
+        if (type.equals("专车")) {
+            Thread.sleep(2000);
+            driverManager.clickSpecUpdateBtn();
+            Thread.sleep(3000);
+            driverManager.clickDownBtn();
+        }
+
+
+//        选择性别
+        driverManager.selectSex(ExcelUtil.getCellAsString(17, colNum));
+//        输入联系地址
+        driverManager.inputDriverContactAddress(ExcelUtil.getCellAsString(18, colNum));
+//        上传手持身份证
+        driverManager.uploadIdCardImg(ExcelUtil.getCellAsString(21, colNum));
+//        输入分组信息
+        driverManager.inputDriverNo(ExcelUtil.getCellAsNumber(22, colNum));
+//        选择准驾车型
+        driverManager.selectDriverType(ExcelUtil.getCellAsString(27, colNum));
+//        选择驾驶证有效期起
+        driverManager.selectDriverLicenseOn(ExcelUtil.getCellAsDate(29, colNum));
+//        选择驾驶证有效期止
+        driverManager.selectDriverLicenseOff(ExcelUtil.getCellAsDate(30, colNum));
+//        输入交通违章次数
+        driverManager.inputTrafficViolationsCount(ExcelUtil.getCellAsNumber(31, colNum));
+//        输入交通事故次数
+        driverManager.inputTrafficAccidentCount(ExcelUtil.getCellAsNumber(32, colNum));
+//        输入发证机构
+        driverManager.inputNetworkCarIssueOrganization(ExcelUtil.getCellAsString(34, colNum));
+//        选择发证日期
+        driverManager.selectNetworkCarIssueDate(ExcelUtil.getCellAsDate(35, colNum));
+//        选择初次领证日期
+        driverManager.selectNetworkCarProofDate(ExcelUtil.getCellAsDate(36, colNum));
+//        选择有效期起
+        driverManager.selectNetworkCarProofOn(ExcelUtil.getCellAsDate(37, colNum));
+//        选择报备日期
+        driverManager.selectRegisterDate(ExcelUtil.getCellAsDate(39, colNum));
+//        选择服务类型
+        driverManager.selectCommercialType(ExcelUtil.getCellAsString(40, colNum));
+//        输入签署公司
+        driverManager.inputContractCompany(ExcelUtil.getCellAsString(41, colNum));
+//        选择合同签订日期
+        driverManager.selectContractSign(ExcelUtil.getCellAsDate(42, colNum));
+//        选择合同有效期起
+        driverManager.selectContractOn(ExcelUtil.getCellAsDate(43, colNum));
+//        选择合同有效期止
+        driverManager.selectContractOff(ExcelUtil.getCellAsDate(44, colNum));
+//        上传合同扫描
+        driverManager.uploadContractPhotoPDFFile(ExcelUtil.getCellAsString(45, colNum));
+//        选择合同类型
+        driverManager.selectContractType(ExcelUtil.getCellAsString(46, colNum));
+//        选择培训类型
+        driverManager.selectType(ExcelUtil.getCellAsString(47, colNum));
+//        输入培训课程名称
+        driverManager.inputCourseName(ExcelUtil.getCellAsString(48, colNum));
+//        选择培训课程日期
+        driverManager.selectCourseDate(ExcelUtil.getCellAsDate(49, colNum));
+//                选择培训开始时间
+        driverManager.selectStartTime(ExcelUtil.getCellAsDate(50, colNum));
+//                选择培训结束时间
+        driverManager.selectStopTime(ExcelUtil.getCellAsDate(51, colNum));
+//                输入培训时长
+        driverManager.inputDuration(ExcelUtil.getCellAsNumber(52, colNum));
+//                输入户名
+        driverManager.inputBankAccountName(ExcelUtil.getCellAsString(53, colNum));
+//                输入账号
+        driverManager.inputBankAccount(ExcelUtil.getCellAsString(54, colNum));
+//                输入银行
+        driverManager.inputBankName(ExcelUtil.getCellAsString(55, colNum));
+//                输入银行地址
+        driverManager.inputBankAddress(ExcelUtil.getCellAsString(56, colNum));
+//                上传银行照片
+        driverManager.uploadBankPhotoFile(ExcelUtil.getCellAsString(57, colNum));
+//                上传体检报告
+        driverManager.uploadExaminateReportPDFFile(ExcelUtil.getCellAsString(58, colNum));
+//                选择民族
+        driverManager.selectDriverNation(ExcelUtil.getCellAsString(59, colNum));
+//                选择婚姻状况
+        driverManager.selectDriverMaritalStatus(ExcelUtil.getCellAsString(60, colNum));
+//                选择外语能力
+        driverManager.selectDriverLanguageLevel(ExcelUtil.getCellAsString(61, colNum));
+//                选择学历
+        driverManager.selectDriverEducation(ExcelUtil.getCellAsString(62, colNum));
+//                输入户口登记机关
+        driverManager.inputDriverCensus(ExcelUtil.getCellAsString(63, colNum));
+//                输入户口住址
+        driverManager.inputDriverAddress(ExcelUtil.getCellAsString(64, colNum));
+//                输入紧急联系人
+        driverManager.inputEmergencyContact(ExcelUtil.getCellAsString(65, colNum));
+
+//                输入联系电话
+        driverManager.inputEmergencyContactPhone(ExcelUtil.getCellAsString(66, colNum));
+//                输入地址
+        driverManager.inputEmergencyContactAddress(ExcelUtil.getCellAsString(67, colNum));
+        // Thread.sleep(3000);
+        driverManager.clickSubmitBtn();
+        d.getMessage();
+        Thread.sleep(8000);
+        driverManager.clickBingding();
+        Thread.sleep(3000);
+
+
+    }
+
+
 
     //添加司机
     private void addDriver(String carTypeName) throws Exception {
@@ -1018,9 +1710,9 @@ public class OperationManagerPo {
 //                选择民族
         driverManager.selectDriverNation(ExcelUtil.getCellAsString(59, colNum));
 //                选择婚姻状况
-      driverManager.selectDriverMaritalStatus(ExcelUtil.getCellAsString(60, colNum));
+        driverManager.selectDriverMaritalStatus(ExcelUtil.getCellAsString(60, colNum));
 //                选择外语能力
-      driverManager.selectDriverLanguageLevel(ExcelUtil.getCellAsString(61, colNum));
+        driverManager.selectDriverLanguageLevel(ExcelUtil.getCellAsString(61, colNum));
 //                选择学历
         driverManager.selectDriverEducation(ExcelUtil.getCellAsString(62, colNum));
 //                输入户口登记机关
@@ -1028,13 +1720,13 @@ public class OperationManagerPo {
 //                输入户口住址
         driverManager.inputDriverAddress(ExcelUtil.getCellAsString(64, colNum));
 //                输入紧急联系人
-       driverManager.inputEmergencyContact(ExcelUtil.getCellAsString(65, colNum));
+        driverManager.inputEmergencyContact(ExcelUtil.getCellAsString(65, colNum));
 
 //                输入联系电话
         driverManager.inputEmergencyContactPhone(ExcelUtil.getCellAsString(66, colNum));
 //                输入地址
         driverManager.inputEmergencyContactAddress(ExcelUtil.getCellAsString(67, colNum));
-       // Thread.sleep(3000);
+        // Thread.sleep(3000);
         driverManager.clickSubmitBtn();
         d.getMessage();
         Thread.sleep(8000);
@@ -1044,20 +1736,20 @@ public class OperationManagerPo {
         //封号处理
         if (type.equals("出租车")) {
             Thread.sleep(2000);
-            d.findElementClick("link","出租车");
+            d.findElementClick("link", "出租车");
             driverManager.clickChangeStatus();
         }
         if (type.equals("专车")) {
             Thread.sleep(2000);
-            d.findElementClick("link","专车");
+            d.findElementClick("link", "专车");
             driverManager.clickChangeStatus();
 
         }
         if (type.equals("快车")) {
             Thread.sleep(2000);
-            d.findElementClick("link","快车");
+            d.findElementClick("link", "快车");
             Thread.sleep(2000);
-          driverManager.clickChangeStatus();
+            driverManager.clickChangeStatus();
         }
         Thread.sleep(3000);
         d.findElementSendKeys("name", "abortTime", "2019-02-09 20:00:00");
@@ -1088,56 +1780,49 @@ public class OperationManagerPo {
         }
 
 
-
     }
 
     /**
-     *  司机信息中每个字段是否有值的校验
+     * 司机信息中每个字段是否有值的校验
+     *
      * @throws InterruptedException
      */
-    public void  driverVerify(String carTypeName) throws InterruptedException {
+    public void driverVerify(String carTypeName) throws InterruptedException {
 
         //点击司机管理下的修改
         Thread.sleep(2000);
-        if(carTypeName.equals("出租车"))
-        {
-            d.findElementClick("xpath","//*[@id=\"taxiDriver_table\"]/tbody/tr[1]/td[12]/a[2]");
+        if (carTypeName.equals("出租车")) {
+            d.findElementClick("xpath", "//*[@id=\"taxiDriver_table\"]/tbody/tr[1]/td[12]/a[2]");
         }
-        if(carTypeName.equals("专车"))
-        {
-            d.findElementClick("xpath","//*[@id=\"specDriver_table\"]/tbody/tr[1]/td[12]/a[2]");
+        if (carTypeName.equals("专车")) {
+            d.findElementClick("xpath", "//*[@id=\"specDriver_table\"]/tbody/tr[1]/td[12]/a[2]");
         }
-        if(carTypeName.equals("快车"))
-        {
-            d.findElementClick("xpath","//*[@id=\"expressDriver_table\"]/tbody/tr[1]/td[12]/a[2]]");
+        if (carTypeName.equals("快车")) {
+            d.findElementClick("xpath", "//*[@id=\"expressDriver_table\"]/tbody/tr[1]/td[12]/a[2]]");
         }
 
         Thread.sleep(2000);
         //点击非必录项下拉
-        d.findElementClick("xpath","//*[@id=\"setMore\"]/div/li/a/i");
+        d.findElementClick("xpath", "//*[@id=\"setMore\"]/div/li/a/i");
         Thread.sleep(2000);
         //判断文本框和下拉框的字段是否有值
         //查看所有的input是否都有值
-        List<WebElement> list= driver.findElements(By.cssSelector("input[type='text']"));
-        for(int i=0;i<list.size();i++) {
-            if ( list.get(i).getAttribute("value").isEmpty()) {
-                if(list.get(i).getAttribute("name").contains("File"))
-                {
+        List<WebElement> list = driver.findElements(By.cssSelector("input[type='text']"));
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getAttribute("value").isEmpty()) {
+                if (list.get(i).getAttribute("name").contains("File")) {
                     continue;
-                }
-                else{
-                    Logger.Output(LogType.LogTypeName.ERROR,list.get(i).getAttribute("name") + "项数据丢失");
+                } else {
+                    Logger.Output(LogType.LogTypeName.ERROR, list.get(i).getAttribute("name") + "项数据丢失");
 
                 }
             }
         }
         //查看所有下拉列表是否都有值
-        List<WebElement> li= driver.findElements(By.cssSelector("option"));
-        for(int j=0;j<li.size();j++)
-        {
-            if(li.get(j).isSelected()&&li.get(j).getText().contains("请选择"))
-            {
-                Logger.Output(LogType.LogTypeName.ERROR,li.get(j).getText() + "项数据丢失");
+        List<WebElement> li = driver.findElements(By.cssSelector("option"));
+        for (int j = 0; j < li.size(); j++) {
+            if (li.get(j).isSelected() && li.get(j).getText().contains("请选择")) {
+                Logger.Output(LogType.LogTypeName.ERROR, li.get(j).getText() + "项数据丢失");
             }
         }
 
@@ -1176,16 +1861,16 @@ public class OperationManagerPo {
                 //修改司机操作（新增非必录项）
                 updateDriver("出租车");
                 driverVerify("出租车");
-              break;
-            case"其他":
+            break;
+            case "其他":
                 d.findElementClick("link", "快车");
-                addDriver("快车");
+                addDriverNew("快车");
                 //修改司机操作（新增非必录项）
-                updateDriver("快车");
+              updateDriver("快车");
                 Thread.sleep(3000);
                 d.findElementClick("link", "专车");
-                addDriver("专车");
-                updateDriver("专车");
+                addDriverNew("专车");
+              updateDriver("专车");
                 break;
         }
     }
@@ -1230,12 +1915,13 @@ public class OperationManagerPo {
     @BeforeMethod
     public void beforeMethod() throws InterruptedException {
         Thread.sleep(3000);
-     d.findElementClick("link", "营运管理中心");
+        d.findElementClick("link", "营运管理中心");
         Logger.Output(LogType.LogTypeName.INFO, "===============================================");
 
     }
+
     @AfterClass
     public void afterClass() {
-    driver.quit();
+        // driver.quit();
     }
 }

@@ -102,6 +102,15 @@ public class RandomValue {
         String carNo ="闽"+str2+RandomValue.getNum(1000,9999);
         return carNo;
     }
+    /**
+     * 随机生成身份证号
+     */
+    public static String getIDCard()
+    {
+        IdCardGenerator g = new IdCardGenerator();
+        return g.generate();
+
+    }
 
     /**
      * 数据封装 

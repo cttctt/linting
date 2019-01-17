@@ -17,6 +17,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.*;
+import org.testng.annotations.Test;
 
 public class CouponMarketingPo extends LoginPo {
     public static WebDriver driver;

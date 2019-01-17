@@ -18,6 +18,7 @@ public class Login {
 	private WebElement  loginBtn;
 	//进入首页用户名
 	@FindBy(xpath="//*[@id=\"wrapper\"]/nav/div/ul[2]/li/a/b")
+
 	private WebElement name;
 
 	//输入用户名

@@ -237,12 +237,6 @@ public class OperationManagerPo {
      */
     @Test
     public void vehicleManagerNew() throws Exception {
-//        Thread.sleep(3000);
-//        d.findElementClick("link", "车辆管理");
-//        Thread.sleep(3000);
-//        addTaxi();
-
-
         Thread.sleep(3000);
         d.findElementClick("link", "车辆管理");
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
@@ -818,12 +812,15 @@ public class OperationManagerPo {
         d.openPage(MyWebdriver.baseURL);
 
 
+
+
     }
 
 
     @Test
     public void addPlatformInfo() throws Exception {
-        Thread.sleep(3000);
+       Thread.sleep(3000);
+//        driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
         d.findElementClick("link", "平台信息管理");
         Thread.sleep(3000);
         String excelPath = MyWebdriver.ProjectURL + "/excel/PlatformInformationCase.xlsx";
@@ -972,8 +969,8 @@ public class OperationManagerPo {
     public void regionalManager() throws Exception {
 
         Thread.sleep(3000);
+
         d.findElementClick("link", "区域代理管理");
-        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         ExcelUtil.setExcelFile(excelPath, "region");
         RegionalManager region = PageFactory.initElements(driver, RegionalManager.class);
         Thread.sleep(3000);
@@ -1915,6 +1912,7 @@ public class OperationManagerPo {
     @BeforeMethod
     public void beforeMethod() throws InterruptedException {
         Thread.sleep(3000);
+
         d.findElementClick("link", "营运管理中心");
         Logger.Output(LogType.LogTypeName.INFO, "===============================================");
 

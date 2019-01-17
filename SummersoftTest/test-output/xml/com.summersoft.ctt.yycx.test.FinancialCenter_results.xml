@@ -4,12 +4,12 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="75.855">
+           time="72.592">
   <properties />
   
   
-            <testcase name="statementOfAccount" time="44.836" classname="com.summersoft.ctt.yycx.test.FinancialCenter" />
-                <testcase name="audit" time="17.197" classname="com.summersoft.ctt.yycx.test.FinancialCenter" />
-                <testcase name="invoiceManage" time="13.822" classname="com.summersoft.ctt.yycx.test.FinancialCenter" />
+            <testcase name="invoiceManage" time="13.743" classname="com.summersoft.ctt.yycx.test.FinancialCenter" />
+                <testcase name="statementOfAccount" time="46.346" classname="com.summersoft.ctt.yycx.test.FinancialCenter" />
+                <testcase name="audit" time="12.503" classname="com.summersoft.ctt.yycx.test.FinancialCenter" />
       
 </testsuite>

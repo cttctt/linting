@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="161.309">
+           time="149.746">
   <properties />
   
   
-            <testcase name="clickMenu" time="161.309" classname="com.summersoft.ctt.yycx.test.TestAll" />
+            <testcase name="exportAll" time="149.746" classname="com.summersoft.ctt.yycx.test.TestAll" />
       
 </testsuite>

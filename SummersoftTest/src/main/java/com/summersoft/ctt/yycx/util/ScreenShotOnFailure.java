@@ -20,6 +20,7 @@ public class ScreenShotOnFailure {
         SimpleDateFormat smf=new SimpleDateFormat("MMddHHmmss");
         String curTime=smf.format(new Date());
         SCREEN_SHOT_NAME =curTime+".png";
+
         FileUtils.copyFile( (((TakesScreenshot) MyWebdriver.driver).getScreenshotAs(OutputType.FILE)),
                 new File(SCREEN_SHOT_PATH + "/" + SCREEN_SHOT_NAME));
     }

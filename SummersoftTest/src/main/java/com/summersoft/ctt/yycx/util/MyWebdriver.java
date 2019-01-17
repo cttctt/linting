@@ -42,11 +42,12 @@ public class MyWebdriver {
     //开通区域代理城市
     public static String city = "厦门市";
     //约约外网测试地址
-  //  public static String baseURL = "http://testAdmin.yycx.qianxx.com/admin/login/9dd58b6d5f64a22d00c3f6264f8ce597.html";
+  //public static String baseURL = "http://testadmin.yycx.qianxx.com/admin/index.html";
+    public static String baseURL ="http://192.168.1.199:8380/admin/login/9dd58b6d5f64a22d00c3f6264f8ce597.html" ;
     // 约约测试服后台地址
  //  public static String baseURL = "http://5000.gr165c6f.summersoft.ali-sh.goodrain.net:10080/admin/index.html";
    //约约数据统计新后台测试地址
-  public static String baseURL="http://192.168.1.199:8380/admin/login/9dd58b6d5f64a22d00c3f6264f8ce597.html";
+//public static String baseURL="http://192.168.1.199:8380/admin/login/9dd58b6d5f64a22d00c3f6264f8ce597.html";
     //轩轩测试服后台地址
     //  public static String baseURL="http://59.110.8.172:8380/admin/index.html";
     //国金测试服后台地址
